@@ -4,7 +4,7 @@ Investigation date: 2026-10-23. Initial target: the owner's original VOX VT20X (
 
 ## Hardware scope
 
-The owner identified the device as the original VT20X. Our baseline is the 2015-07-31 VTX MIDI specification and supplied Tone Room 1.4.0 artifacts. The [original VT20X specifications](https://voxamps.com/en-gb/product/vt20x/) list USB mini Type-B, 11 panel/20 editor amp models, 33 panel/60 editor programs and eight user memories. The recovered app bank therefore does not depend on owning Classic Blue; matching its records to this particular amp's factory bank still requires live reads.
+The owner identified the device as the original VT20X. Our baseline is the 2015-07-31 VTX MIDI specification and supplied Tone Room 1.4.0 artifacts. The [original VT20X specifications](https://voxamps.com/en-gb/product/vt20x/) list USB mini Type-B, 11 panel/20 editor amp models, 33 panel/60 editor programs and eight user memories. The recovered app bank therefore does not depend on owning Classic Blue. Subsequent [live reads](hardware-validation.md) matched all 60 factory slots on this particular amp to the recovered records.
 
 VOX describes [VT20X Classic Blue](https://voxamps.com/product/vt20x-classic-blue/) as using VET+ modeling and an expanded role for the 12AX7 tube stage. Its page also lists Tone Room 1.4.0, but that alone does not prove identical firmware behavior, preset contents or sound. Classic Blue protocol compatibility is unverified and outside the initial hardware target. Do not infer hardware generation solely from the VTX family identity reply.
 
@@ -38,9 +38,13 @@ The DMG was extracted with a limited userspace reader and its package expanded w
 
 The [native evidence summary](native-evidence.md) retains addresses and original REA evidence identifiers. The detailed analysis archive, installer, app binary, bundled presets and PDF files remain outside this repository. Evidence IDs identify records in that original archive; they are not public URLs or downloadable files here.
 
-This repository packages the implementation-relevant findings independently of those large local research inputs. It does not contain original Tone Room source code, an executable replacement, firmware or captured device traffic.
+This repository packages the implementation-relevant findings independently of those large local research inputs. It does not contain original Tone Room source code, an executable replacement or firmware. The hardware validation summary retains identity bytes, aggregate observations and hashes; complete traffic and the user's settings backup remain outside the repository.
 
 The [preset inventory](presets.md) includes derived JSON reference data: 60 complete records from the VTX initializer's table and eight records from the installer defaults. Each record retains raw bytes and a SHA-256; the embedded block's byte range, hash and native references make the extraction reproducible. Original vendor files remain outside the repository.
+
+## Live evidence
+
+The owner ran the experimental read-only CoreMIDI probe from a normal macOS Terminal with Tone Room closed. Capture `20261023T173434.743506Z` contains 73 transmitted requests, 143 received MIDI packets and 73 assembled replies. Independent checks reassembled the packet stream, matched it to the recorded exchanges, verified the read-only transmit allowlist, compared all 60 factory records and reconstructed the eight-slot backup. [Hardware validation](hardware-validation.md) documents the scope; [machine-readable evidence](../reference/hardware-read-validation.json) retains artifact hashes and measurements. These observations supplement the static REA evidence and are not REA runtime captures.
 
 ## Known source ambiguities
 

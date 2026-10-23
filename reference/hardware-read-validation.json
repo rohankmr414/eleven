@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "kind": "observed_hardware_read_session",
+  "capture_id": "20261023T173434.743506Z",
+  "started_at": "2026-10-23T17:34:34.743506+00:00",
+  "finished_at": "2026-10-23T17:34:40.676789+00:00",
+  "hardware": {
+    "model": "VT20X",
+    "generation": "original, before Classic Blue",
+    "model_identification": "owner statement; MIDI identity is family-level"
+  },
+  "host": {
+    "os": "macOS",
+    "version": "27.0.1",
+    "architecture": "arm64",
+    "execution": "user Terminal, Tone Room closed"
+  },
+  "transport": {
+    "kind": "USB-MIDI via CoreMIDI",
+    "usb_vendor_id": 2372,
+    "usb_product_id": 306,
+    "usb_device_name": "Valvetronix X",
+    "midi_input_name": "Valvetronix X CTRL",
+    "midi_output_name": "Valvetronix X CTRL",
+    "same_device_and_entity": true
+  },
+  "identity": {
+    "raw_hex": "f07e000602423401000001000100f7",
+    "manufacturer": 66,
+    "family": [
+      52,
+      1
+    ],
+    "member": [
+      0,
+      0
+    ],
+    "major": 1,
+    "minor": 1
+  },
+  "read_only": true,
+  "request_count": 73,
+  "matched_reply_count": 73,
+  "decode_failures": 0,
+  "verified_requests": [
+    {
+      "kind": "universal_identity",
+      "count": 1
+    },
+    {
+      "function": 18,
+      "count": 2
+    },
+    {
+      "function": 16,
+      "count": 2
+    },
+    {
+      "function": 28,
+      "bank": 0,
+      "count": 8,
+      "slot_range_inclusive": [
+        0,
+        7
+      ]
+    },
+    {
+      "function": 28,
+      "bank": 1,
+      "count": 60,
+      "slot_range_inclusive": [
+        0,
+        59
+      ]
+    }
+  ],
+  "factory_bank": {
+    "records": 60,
+    "record_size": 62,
+    "byte_exact_matches": 60,
+    "index_mapping_verified": true,
+    "reference": "vtx-app-presets.json",
+    "block_sha256": "8e2455cbff2e6cbc146ce2dd71201e87ca8ec9081d5e9285254f8ef2d3c21521"
+  },
+  "user_backup": {
+    "records": 8,
+    "file": "user-bank.vtxprog",
+    "bytes": 528,
+    "sha256": "0706b89330814212deb97a75e856b3f389a3928011908afe9823cfbaac23bcb3",
+    "contents_in_repository": false,
+    "restored_to_amp": false,
+    "imported_into_tone_room": false
+  },
+  "current_unchanged_between_reads": true,
+  "mode_unchanged_between_reads": true,
+  "received_midi_packets": 143,
+  "received_packet_length_counts": {
+    "10": 2,
+    "15": 1,
+    "31": 2,
+    "33": 68,
+    "48": 70
+  },
+  "dump_fragment_lengths": {
+    "current": [
+      48,
+      31
+    ],
+    "stored": [
+      48,
+      33
+    ]
+  },
+  "response_latency_ms": {
+    "min": 1.274,
+    "median": 1.967,
+    "mean": 2.018,
+    "max": 3.946,
+    "definition": "Immediately before send to receipt of final matching CoreMIDI packet; includes host scheduling"
+  },
+  "test_settings": {
+    "inter_request_pause_ms": 75,
+    "timeout_ms": 5000,
+    "automatic_retries": 0
+  },
+  "local_artifacts": [
+    {
+      "name": "report.json",
+      "bytes": 21920,
+      "sha256": "5f40f3a5bfbacaa44a20fe93ab4c381e3c72c2190661eaef6b1aea385fb2c6d8"
+    },
+    {
+      "name": "traffic.jsonl",
+      "bytes": 51678,
+      "sha256": "505690fc0bfd7a5356e5d27fed508937529b91d3a524ef70c4697105402f6a11"
+    },
+    {
+      "name": "decoded.json",
+      "bytes": 32367,
+      "sha256": "edbea1049c6f346d90732d8891d4e08ee1574501b67ffd22a3f9c6372f87bdea"
+    },
+    {
+      "name": "user-bank.vtxprog",
+      "bytes": 528,
+      "sha256": "0706b89330814212deb97a75e856b3f389a3928011908afe9823cfbaac23bcb3"
+    }
+  ],
+  "probe_sources": [
+    {
+      "name": "probe_macos.py",
+      "sha256": "0a6c5333102223ff79e5833e3a506cf632ea823c7d44f7553ec477579e13d0c7"
+    },
+    {
+      "name": "analyze_capture.mjs",
+      "sha256": "874b2c5347a8718fd6ea3db6dd856143c4fb88020d9e7c44b8374956f354f8b2"
+    },
+    {
+      "name": "vtx.mjs",
+      "sha256": "576e4f22ef7c04eeed0bbe9cbb5201da0b4fee5cace82f0e3d51a1e7d48c6190"
+    }
+  ],
+  "verification": [
+    "Every transmitted frame was an allowed inquiry/read",
+    "Raw packet reassembly equals recorded replies",
+    "All 73 decoded exchanges have matching request/response types and selectors",
+    "All 60 raw factory records equal the app bank at the same indices",
+    "Eight-slot backup bytes reconstruct exactly from read-back records"
+  ],
+  "not_verified": [
+    "custom-data reads",
+    "mutations and persistent writes",
+    "physical-control notifications",
+    "reconnects",
+    "sustained throughput",
+    "Linux/Raspberry Pi",
+    "wireless transport",
+    "Classic Blue or other firmware"
+  ]
+}

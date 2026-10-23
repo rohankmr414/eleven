@@ -18,9 +18,11 @@
       "ev_9893d57af3cce3dfc03f1a5e885729d3e42e445ed12dbf27a353534d0f852baa",
       "ev_2cce11d92c2d67042916350998d386394024bef7c5261932062970c78eb61f62"
     ],
-    "hardware_tested": false
+    "hardware_tested": true,
+    "hardware_validation_file": "hardware-read-validation.json",
+    "hardware_validation_scope": "All 60 records match the same-index factory slots on the owner original VT20X, identity major 1/minor 1, 2026-10-23. Other devices/firmware unverified."
   },
-  "index_semantics": "Zero-based position in the app embedded table. Correspondence to live factory-bank slot numbers and firmware contents requires readback verification.",
+  "index_semantics": "Zero-based position in the app embedded table. Same-index live factory-slot contents verified byte-for-byte on the owner original VT20X, identity major 1/minor 1. Other devices and firmware require verification.",
   "value_semantics": "parameters_raw are integers; apply the separate vtx-midi-reference.json for units, display scales and model-dependent definitions. raw_hex is the complete lossless record, including unknown bytes.",
   "programs": [
     {

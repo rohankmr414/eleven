@@ -29,7 +29,7 @@ open candidate input/output pair
   <- retain complete raw records and slot metadata
 ```
 
-Names seen in Tone Room's scanner include `Valvetronix X`, `VOX 2ch Audio Device`, `Adio` and `UD-BT01`. They are discovery hints, not an exhaustive allowlist or proof of a valid paired input/output. Match identity and responses before reporting a connected session. USB VID/PID and Linux endpoint behavior are not established by this investigation.
+Names seen in Tone Room's scanner include `Valvetronix X`, `VOX 2ch Audio Device`, `Adio` and `UD-BT01`. They are discovery hints, not an exhaustive allowlist or proof of a valid paired input/output. Match identity and responses before reporting a connected session. The [tested original VT20X](hardware-validation.md) exposed USB VID/PID `0944:0132` and one input/output pair named `Valvetronix X CTRL`, belonging to the same CoreMIDI device/entity. Linux endpoint behavior remains unverified; macOS endpoint handles and unique IDs are not portable discovery constants.
 
 Read custom defaults separately when required. Reading all 60 factory presets is optional and can be deferred. Treat a multi-request snapshot as potentially inconsistent if the user changes a physical control while it is collected; resynchronize affected state.
 

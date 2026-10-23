@@ -1,6 +1,6 @@
 # VTX wire protocol
 
-Source: [VOX VTX MIDI Implementation v1.0](https://voxamps.com/wp-content/uploads/2019/07/VTX_Midi_Implementation.pdf), PDF pages 1–7. All byte literals here are hexadecimal; slot counts and lengths are decimal. Hardware behavior remains unverified.
+Source: [VOX VTX MIDI Implementation v1.0](https://voxamps.com/wp-content/uploads/2019/07/VTX_Midi_Implementation.pdf), PDF pages 1–7. All byte literals here are hexadecimal; slot counts and lengths are decimal. Identity and reads `10`, `12`, `1C` were [validated on the owner's original VT20X](hardware-validation.md). Other commands remain unverified on hardware.
 
 ## Transport and framing
 
@@ -15,6 +15,8 @@ F0 42 30 00 01 34 function payload... F7
 `42` is the manufacturer ID, `30` is the documented channel-zero format byte, and `00 01 34` is the VTX model/family portion. In tables below, `H` abbreviates `F0 42 30 00 01 34`. No checksum appears in the documented message layouts. Do not assume other MIDI channel values are supported.
 
 The transport must assemble complete SysEx frames across callbacks, handle multiple frames per callback and handle interleaved MIDI real-time status bytes separately. A packet/callback boundary is not necessarily a message boundary. Feed only complete frames to the codec; keep malformed/unknown traffic available for diagnostics.
+
+The hardware capture confirmed fragmentation: each 79-byte current dump arrived as 48 + 31 bytes and each 81-byte stored dump as 48 + 33 bytes in CoreMIDI packets. These are observed packet divisions on this host, not fixed boundaries a parser should require.
 
 ## Identity inquiry
 

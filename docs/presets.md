@@ -8,9 +8,9 @@ Tone Room 1.4.0 includes a **60-program VTX preset bank inside its executable**,
 | --- | --- | --- |
 | Embedded VTX preset bank | 60 | Recovered app data; usable as offline reference sounds after validation |
 | Bundled user defaults | 8 | Installer defaults; separate from the app preset bank and the user's saved settings |
-| Connected amp | 60 factory addresses + 8 user slots | Read live to establish actual firmware contents and user settings |
+| Connected amp | 60 factory addresses + 8 user slots | All read successfully; factory slots match the app table on the tested original VT20X; user backup retained locally |
 
-The embedded data provides names and full parameter values, so an implementation can browse and inspect these sounds without an attached amp. Do not infer that a given app-table index is byte-identical to a factory slot on every firmware. When connected, read factory bank `01` using `1C` to verify the mapping and contents.
+The embedded data provides names and full parameter values, so an implementation can browse and inspect these sounds without an attached amp. A [2026-10-23 hardware capture](hardware-validation.md) verified every app-table index against factory bank `01` on the owner's original VT20X (identity version fields major 1, minor 1): **60 of 60 complete 62-byte records match exactly**. This does not establish the same contents on every firmware or on Classic Blue. Reading the connected amp remains authoritative.
 
 ## Recovered data
 

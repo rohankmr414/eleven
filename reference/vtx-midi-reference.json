@@ -9,7 +9,7 @@
     "retrieved": "2026-10-23"
   },
   "verification": {
-    "hardware_tested": false,
+    "hardware_tested": true,
     "app_corroborated": "selected fields only: packing order, parameter value splitting, custom request/write function codes",
     "app_evidence_file": "../docs/native-evidence.md",
     "app_evidence_ids": [
@@ -21,7 +21,9 @@
     "text_parsed": true,
     "diagram_visual_verification": false,
     "diagram_limit": "web PDF screenshot tool unavailable; packing follows the text diagram on PDF page 7 and is independently corroborated by Tone Room's native routine",
-    "app_evidence_scope": "Selected static findings are summarized in the linked document. Original REA dossiers and vendor artifacts are retained outside this repository."
+    "app_evidence_scope": "Selected static findings are summarized in the linked document. Original REA dossiers and vendor artifacts are retained outside this repository.",
+    "hardware_tested_scope": "Partial: identity, mode/current reads and user/factory stored-program reads on original VT20X, identity major 1/minor 1, macOS. Other commands and transports unverified.",
+    "hardware_evidence_file": "hardware-read-validation.json"
   },
   "wire": {
     "header": [
@@ -1765,7 +1767,7 @@
     ]
   },
   "cautions": [
-    "Functional numeric transcription; not tested against hardware.",
+    "Functional numeric transcription with partial hardware validation: identity and reads 0x10, 0x12, 0x1c only; see verification.hardware_tested_scope.",
     "Display divisors are derived from the published raw/display endpoints; actual UI taper/step behavior needs app or hardware corroboration.",
     "Multi-byte fields in raw dumps are little-endian base-256. Parameter-change wire values are two base-128 digits. Do not interchange these encodings.",
     "Preserve reserved bytes and bytes not covered by the selected effect schema.",
