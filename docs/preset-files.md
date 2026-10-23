@@ -2,6 +2,8 @@
 
 Status: **observed statically** in Tone Room 1.4.0 build 2910 and its bundled `USERBANK.vtxprog`. This is a bounded file-format reconstruction, not an official VOX disk-format specification. See [sources](sources.md) for artifact hashes.
 
+For the actual sounds, see [preset inventory](presets.md): the executable also contains a 60-program VTX bank. That embedded table is distinct from the `.vtxprog` disk container described here.
+
 ## Container
 
 A `.vtxprog` file contains a 32-byte header followed by consecutive unpacked 62-byte program records. It has no MIDI `F0`/`F7` envelope and does not use MIDI seven-bit packing.

@@ -34,6 +34,8 @@ The [native evidence summary](native-evidence.md) retains addresses and original
 
 This repository packages the implementation-relevant findings independently of those large local research inputs. It does not contain original Tone Room source code, an executable replacement, firmware or captured device traffic.
 
+The [preset inventory](presets.md) includes derived JSON reference data: 60 complete records from the VTX initializer's table and eight records from the installer defaults. Each record retains raw bytes and a SHA-256; the embedded block's byte range, hash and native references make the extraction reproducible. Original vendor files remain outside the repository.
+
 ## Known source ambiguities
 
 - The custom-dump response paragraph refers to request `1C`; the explicit request definition and inspected app builder use `31`.

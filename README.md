@@ -18,6 +18,7 @@ The reference combines VOX's published MIDI specification with static analysis o
 | [Wire protocol](docs/wire-protocol.md) | Discovery, frame layouts, commands, replies, events and seven-bit packing |
 | [Program and parameter layout](docs/program-layout.md) | Raw record offsets, model IDs, ranges, units and custom defaults |
 | [Preset files](docs/preset-files.md) | `.vtxprog` headers and the observed eight- and eleven-record variants |
+| [Preset inventory](docs/presets.md) | The 60 sounds embedded in Tone Room and eight bundled user defaults |
 | [Session behavior](docs/session-behavior.md) | Synchronization, request matching, edits, saves, reconnects and failures |
 | [Implementation boundaries](docs/implementation.md) | Transport, codec, session and API responsibilities |
 | [Verification plan](docs/verification.md) | Offline checks, first hardware experiments and unresolved questions |
@@ -27,6 +28,8 @@ Machine-readable references:
 
 - [vtx-midi-reference.json](reference/vtx-midi-reference.json): numeric command/parameter map; numbers are decimal and offsets are zero-based.
 - [test-vectors.json](reference/test-vectors.json): specification-derived examples for a future codec. These are synthetic examples, not captured amp traffic.
+- [vtx-app-presets.json](reference/vtx-app-presets.json): 60 complete VTX records recovered from the app's embedded bank, with decoded parameters and provenance.
+- [vtx-bundled-user-defaults.json](reference/vtx-bundled-user-defaults.json): eight installer default records; these are not the user's saved amp settings.
 
 ## State that must remain separate
 

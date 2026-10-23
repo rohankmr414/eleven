@@ -1,0 +1,4005 @@
+{
+  "schema_version": 1,
+  "title": "Tone Room 1.4.0 embedded VTX preset bank",
+  "provenance": {
+    "kind": "static_executable_data",
+    "executable_sha256": "2317fc2c6af9fdaef1e6152a2b6c2d4bbc5c79880c51221d77271c07ef3e2a65",
+    "file_offset": "0x21dae0",
+    "virtual_address": "0x10021dae0",
+    "record_count": 60,
+    "record_size": 62,
+    "byte_length": 3720,
+    "block_sha256": "8e2455cbff2e6cbc146ce2dd71201e87ca8ec9081d5e9285254f8ef2d3c21521",
+    "initializer": "0x10000d34a",
+    "constructor": "0x1000c85b8",
+    "rtti_name": "13VTXDataCenter",
+    "evidence_ids": [
+      "ev_e64dadf0b470b8f9f660d8bc0b08d304c9ff77c9adef4c6985a31cbacb026998",
+      "ev_9893d57af3cce3dfc03f1a5e885729d3e42e445ed12dbf27a353534d0f852baa",
+      "ev_2cce11d92c2d67042916350998d386394024bef7c5261932062970c78eb61f62"
+    ],
+    "hardware_tested": false
+  },
+  "index_semantics": "Zero-based position in the app embedded table. Correspondence to live factory-bank slot numbers and firmware contents requires readback verification.",
+  "value_semantics": "parameters_raw are integers; apply the separate vtx-midi-reference.json for units, display scales and model-dependent definitions. raw_hex is the complete lossless record, including unknown bytes.",
+  "programs": [
+    {
+      "index": 0,
+      "name": "Standard Clean 1",
+      "raw_hex": "5374616e6461726420436c65616e2031181000233d473c4f003c010000000101000330243200000575002132000005000000000000000000262d00241900",
+      "sha256": "45172977ec3abe4cf92b89425a1d524dfb84ec15402d4812f5e69d25d333d8bc",
+      "amp_model": "deluxe_cl_vibrato",
+      "parameters_raw": {
+        "noise_reduction": 24,
+        "amp_model": 0,
+        "gain": 35,
+        "treble": 61,
+        "middle": 71,
+        "bass": 60,
+        "volume": 79,
+        "presence_or_tone": 0,
+        "resonance": 60,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 1,
+        "pedal2_model": 5,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 1,
+          "model": "chorus",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 768,
+            "depth": 48,
+            "manual": 36,
+            "mix": 50,
+            "low_cut": 0,
+            "high_cut": 0
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 117,
+            "level": 33,
+            "feedback": 50,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 38,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21dae0"
+    },
+    {
+      "index": 1,
+      "name": "Standard Clean 2",
+      "raw_hex": "5374616e6461726420436c65616e2032181001233d473c4f001e010000000101000330243200000575002132000005000000000000000000262d00241900",
+      "sha256": "8db270b3cb82229f38e743f254859ab6d5bed0955e49c8488edce0f23a1fcfd6",
+      "amp_model": "deluxe_cl_normal",
+      "parameters_raw": {
+        "noise_reduction": 24,
+        "amp_model": 1,
+        "gain": 35,
+        "treble": 61,
+        "middle": 71,
+        "bass": 60,
+        "volume": 79,
+        "presence_or_tone": 0,
+        "resonance": 30,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 1,
+        "pedal2_model": 5,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 1,
+          "model": "chorus",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 768,
+            "depth": 48,
+            "manual": 36,
+            "mix": 50,
+            "low_cut": 0,
+            "high_cut": 0
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 117,
+            "level": 33,
+            "feedback": 50,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 38,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21db1e"
+    },
+    {
+      "index": 2,
+      "name": "Classic Crunch 1",
+      "raw_hex": "436c6173736963204372756e636820311f10023b2f1f234300000001000101021f00514f32323202e8033232320000000000000000000001162700100900",
+      "sha256": "dffa9bf077e708444dfe18569144d01d3dcdd03fdb81b9944b14b0626e2c4db5",
+      "amp_model": "tweed_4x10_bright",
+      "parameters_raw": {
+        "noise_reduction": 31,
+        "amp_model": 2,
+        "gain": 59,
+        "treble": 47,
+        "middle": 31,
+        "bass": 35,
+        "volume": 67,
+        "presence_or_tone": 0,
+        "resonance": 0,
+        "bright_cap": 0,
+        "low_cut": 1,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 2,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 31,
+            "tone": 81,
+            "level": 79,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 2,
+          "model": "phaser_orange_1",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 1000,
+            "resonance": 50,
+            "manual": 50,
+            "depth": 50
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 22,
+            "time": 39,
+            "pre_delay_ms": 0,
+            "low_damp": 16,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21db5c"
+    },
+    {
+      "index": 3,
+      "name": "Classic Crunch 2",
+      "raw_hex": "436c6173736963204372756e636820322110035e2c55123a00000100000201021f00514f32323202e8033232320000000000000000000000214f00241900",
+      "sha256": "883d6eafb6226c84ded5e002f78e4a1609047b064a1ede06efb40ab9e0e3b46b",
+      "amp_model": "tweed_4x10_normal",
+      "parameters_raw": {
+        "noise_reduction": 33,
+        "amp_model": 3,
+        "gain": 94,
+        "treble": 44,
+        "middle": 85,
+        "bass": 18,
+        "volume": 58,
+        "presence_or_tone": 0,
+        "resonance": 0,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 2,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 31,
+            "tone": 81,
+            "level": 79,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 2,
+          "model": "phaser_orange_1",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 1000,
+            "resonance": 50,
+            "manual": 50,
+            "depth": 50
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 33,
+            "time": 79,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21db9a"
+    },
+    {
+      "index": 4,
+      "name": "Special Clean",
+      "raw_hex": "5370656369616c20436c65616e2020201810042334404147215d010000000107280032483232320655011a32000b23000000000000000001103300001c00",
+      "sha256": "018cc0333ca101f6968f67f8ca495686e04905c3c5b7830e3a49e3d4b7719bad",
+      "amp_model": "boutique_cl",
+      "parameters_raw": {
+        "noise_reduction": 24,
+        "amp_model": 4,
+        "gain": 35,
+        "treble": 52,
+        "middle": 64,
+        "bass": 65,
+        "volume": 71,
+        "presence_or_tone": 33,
+        "resonance": 93,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 7,
+        "pedal2_model": 6,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 7,
+          "model": "fat_dist",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 40,
+            "tone": 50,
+            "level": 72,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 341,
+            "level": 26,
+            "feedback": 50,
+            "tone": 0,
+            "mod_speed": 11,
+            "mod_depth": 35
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 16,
+            "time": 51,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 28
+          }
+        }
+      },
+      "source_file_offset": "0x21dbd8"
+    },
+    {
+      "index": 5,
+      "name": "Special OD",
+      "raw_hex": "5370656369616c204f442020202020202f10054436262740130500010000010526004c4033211d056c0111320000050000000000000000001c1d002e1900",
+      "sha256": "a44593c57a46e1295747210b915c709d5671f62ee3c01bfdca5694d7840c4d9b",
+      "amp_model": "boutique_od",
+      "parameters_raw": {
+        "noise_reduction": 47,
+        "amp_model": 5,
+        "gain": 68,
+        "treble": 54,
+        "middle": 38,
+        "bass": 39,
+        "volume": 64,
+        "presence_or_tone": 19,
+        "resonance": 5,
+        "bright_cap": 0,
+        "low_cut": 1,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 5,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 38,
+            "tone": 76,
+            "level": 64,
+            "treble": 51,
+            "middle": 33,
+            "bass": 29
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 364,
+            "level": 17,
+            "feedback": 50,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 28,
+            "time": 29,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21dc16"
+    },
+    {
+      "index": 6,
+      "name": "VOX Chime",
+      "raw_hex": "564f58204368696d65202020202020201e100632435334450a4d01000000000446003c3c323232045014290d1a3200000000000000000003181e00000000",
+      "sha256": "e9ed91121d5cd26f0da00aafa65ff1b168c8fd767c35f8d693c995b1bbdece1a",
+      "amp_model": "vox_ac30",
+      "parameters_raw": {
+        "noise_reduction": 30,
+        "amp_model": 6,
+        "gain": 50,
+        "treble": 67,
+        "middle": 83,
+        "bass": 52,
+        "volume": 69,
+        "presence_or_tone": 10,
+        "resonance": 77,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 0,
+        "pedal1_model": 4,
+        "pedal2_model": 4,
+        "reverb_model": 3
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 4,
+          "model": "treble_boost",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 70,
+            "tone": 60,
+            "level": 60,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 4,
+          "model": "tremolo",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 5200,
+            "depth": 41,
+            "duty": 13,
+            "shape": 26,
+            "level": 50
+          }
+        },
+        "reverb": {
+          "model_id": 3,
+          "model": "plate",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 24,
+            "time": 30,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 0
+          }
+        }
+      },
+      "source_file_offset": "0x21dc54"
+    },
+    {
+      "index": 7,
+      "name": "VOX Boost",
+      "raw_hex": "564f5820426f6f737420202020202020291007483d333246273a01000000000532006440323232045014290d1a3200000000000000000003152000000000",
+      "sha256": "c8597fa773d96619eb1c441523bc959d068c679ecedb0192694782f2d0dcd4f1",
+      "amp_model": "vox_ac30tb",
+      "parameters_raw": {
+        "noise_reduction": 41,
+        "amp_model": 7,
+        "gain": 72,
+        "treble": 61,
+        "middle": 51,
+        "bass": 50,
+        "volume": 70,
+        "presence_or_tone": 39,
+        "resonance": 58,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 0,
+        "pedal1_model": 5,
+        "pedal2_model": 4,
+        "reverb_model": 3
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 50,
+            "tone": 100,
+            "level": 64,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 4,
+          "model": "tremolo",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 5200,
+            "depth": 41,
+            "duty": 13,
+            "shape": 26,
+            "level": 50
+          }
+        },
+        "reverb": {
+          "model_id": 3,
+          "model": "plate",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 21,
+            "time": 32,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 0
+          }
+        }
+      },
+      "source_file_offset": "0x21dc92"
+    },
+    {
+      "index": 8,
+      "name": "UK Rock 1",
+      "raw_hex": "554b20526f636b2031202020202020202010084e4744484118590100000101063700264532323201ab0132323200000000000000000000001d2d00241900",
+      "sha256": "70dad890b661f013498a54db0cf080d704bc79dbe5a50478fd2d35e8ba6eb8bb",
+      "amp_model": "brit_1959_treble",
+      "parameters_raw": {
+        "noise_reduction": 32,
+        "amp_model": 8,
+        "gain": 78,
+        "treble": 71,
+        "middle": 68,
+        "bass": 72,
+        "volume": 65,
+        "presence_or_tone": 24,
+        "resonance": 89,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 6,
+        "pedal2_model": 1,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 6,
+          "model": "orange_dist",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 55,
+            "tone": 38,
+            "level": 69,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 1,
+          "model": "phaser_black",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 427,
+            "resonance": 50,
+            "manual": 50,
+            "depth": 50
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 29,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21dcd0"
+    },
+    {
+      "index": 9,
+      "name": "UK Rock 2",
+      "raw_hex": "554b20526f636b2032202020202020202410095254430e4343390100000001021f00284f32321e048607290d1a32000000000000000000001d2d00241900",
+      "sha256": "3540080333dab532e6a36d8261e1754aa51bd1445e76ac3b2ba6e0a8e0a6c6d1",
+      "amp_model": "brit_1959_normal",
+      "parameters_raw": {
+        "noise_reduction": 36,
+        "amp_model": 9,
+        "gain": 82,
+        "treble": 84,
+        "middle": 67,
+        "bass": 14,
+        "volume": 67,
+        "presence_or_tone": 67,
+        "resonance": 57,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 4,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 31,
+            "tone": 40,
+            "level": 79,
+            "treble": 50,
+            "middle": 50,
+            "bass": 30
+          }
+        },
+        "pedal2": {
+          "model_id": 4,
+          "model": "tremolo",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 1926,
+            "depth": 41,
+            "duty": 13,
+            "shape": 26,
+            "level": 50
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 29,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21dd0e"
+    },
+    {
+      "index": 10,
+      "name": "UK HiGain",
+      "raw_hex": "554b2048694761696e202020202020202b100a4e34282a41324d0000010201021f00514f32323200c800324d0001230000000000000000001d2d00241900",
+      "sha256": "b2cc897a7d5f8c4d7a39c2e95b380c3de8d57a1d5e5b05a17076f74abd373941",
+      "amp_model": "brit_800",
+      "parameters_raw": {
+        "noise_reduction": 43,
+        "amp_model": 10,
+        "gain": 78,
+        "treble": 52,
+        "middle": 40,
+        "bass": 42,
+        "volume": 65,
+        "presence_or_tone": 50,
+        "resonance": 77,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 0,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 31,
+            "tone": 81,
+            "level": 79,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 0,
+          "model": "flanger",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 200,
+            "depth": 50,
+            "manual": 77,
+            "low_cut": 0,
+            "high_cut": 1,
+            "resonance": 35
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 29,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21dd4c"
+    },
+    {
+      "index": 11,
+      "name": "UK Metal",
+      "raw_hex": "554b204d6574616c202020202020202040100b4833645e4143580100000001053200645b323223054601203e0d09150000000000000000001d2d00241900",
+      "sha256": "27f7d8db7b60a91f6beac2ebbdbb28d0e08a9d3d99d32760610ab882bd0ec82a",
+      "amp_model": "brit_vm",
+      "parameters_raw": {
+        "noise_reduction": 64,
+        "amp_model": 11,
+        "gain": 72,
+        "treble": 51,
+        "middle": 100,
+        "bass": 94,
+        "volume": 65,
+        "presence_or_tone": 67,
+        "resonance": 88,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 5,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 50,
+            "tone": 100,
+            "level": 91,
+            "treble": 50,
+            "middle": 50,
+            "bass": 35
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 326,
+            "level": 32,
+            "feedback": 62,
+            "tone": 13,
+            "mod_speed": 9,
+            "mod_depth": 21
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 29,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21dd8a"
+    },
+    {
+      "index": 12,
+      "name": "Super Lead",
+      "raw_hex": "5375706572204c65616420202020202039100c55543d62480c4d010001010101e6015a393200010556012734000005000000000000000000132d002e1900",
+      "sha256": "43fc0d1ccbd164212bd3d21cbab04e652118d2f3068dedf19a5df31493ed7ffd",
+      "amp_model": "sl_od",
+      "parameters_raw": {
+        "noise_reduction": 57,
+        "amp_model": 12,
+        "gain": 85,
+        "treble": 84,
+        "middle": 61,
+        "bass": 98,
+        "volume": 72,
+        "presence_or_tone": 12,
+        "resonance": 77,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 1,
+        "pedal2_model": 5,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 1,
+          "model": "chorus",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 486,
+            "depth": 90,
+            "manual": 57,
+            "mix": 50,
+            "low_cut": 0,
+            "high_cut": 1
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 342,
+            "level": 39,
+            "feedback": 52,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 19,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21ddc8"
+    },
+    {
+      "index": 13,
+      "name": "CA Metal",
+      "raw_hex": "4341204d6574616c202020202020202041100d613d2b624735590100000201021f00514f32273200c800324d000123000000000000000001132b00100900",
+      "sha256": "7adaf46faa2f1deab5380aa25bf33dd9eb8ff5a17cbbeb226f4a3e55dc8a421a",
+      "amp_model": "double_rec",
+      "parameters_raw": {
+        "noise_reduction": 65,
+        "amp_model": 13,
+        "gain": 97,
+        "treble": 61,
+        "middle": 43,
+        "bass": 98,
+        "volume": 71,
+        "presence_or_tone": 53,
+        "resonance": 89,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 0,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 31,
+            "tone": 81,
+            "level": 79,
+            "treble": 50,
+            "middle": 39,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 0,
+          "model": "flanger",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 200,
+            "depth": 50,
+            "manual": 77,
+            "low_cut": 0,
+            "high_cut": 1,
+            "resonance": 35
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 19,
+            "time": 43,
+            "pre_delay_ms": 0,
+            "low_damp": 16,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21de06"
+    },
+    {
+      "index": 14,
+      "name": "Ecstasy",
+      "raw_hex": "4563737461737920202020202020202041100e4b45394a4b22590001000001012c015a243200000644013232000d240000000000000000001d2d00241900",
+      "sha256": "ca645d69ef508ca8cbe730698b832fbd5e5c9cd0543db37960cdafbb8072e341",
+      "amp_model": "cali_elation",
+      "parameters_raw": {
+        "noise_reduction": 65,
+        "amp_model": 14,
+        "gain": 75,
+        "treble": 69,
+        "middle": 57,
+        "bass": 74,
+        "volume": 75,
+        "presence_or_tone": 34,
+        "resonance": 89,
+        "bright_cap": 0,
+        "low_cut": 1,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 1,
+        "pedal2_model": 6,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 1,
+          "model": "chorus",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 300,
+            "depth": 90,
+            "manual": 36,
+            "mix": 50,
+            "low_cut": 0,
+            "high_cut": 0
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 324,
+            "level": 50,
+            "feedback": 50,
+            "tone": 0,
+            "mod_speed": 13,
+            "mod_depth": 36
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 29,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21de44"
+    },
+    {
+      "index": 15,
+      "name": "EVolution 2",
+      "raw_hex": "45566f6c7574696f6e2032202020202031100f4e494e514b285501000001010446003c3c3232320264000c323200000000000000000000001d2d00241900",
+      "sha256": "5e9268e460dcbf86fba65e1c95a780cfacc2b737ed83905f525615f71d404fbe",
+      "amp_model": "erupt_iii_ch2",
+      "parameters_raw": {
+        "noise_reduction": 49,
+        "amp_model": 15,
+        "gain": 78,
+        "treble": 73,
+        "middle": 78,
+        "bass": 81,
+        "volume": 75,
+        "presence_or_tone": 40,
+        "resonance": 85,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 4,
+        "pedal2_model": 2,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 4,
+          "model": "treble_boost",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 70,
+            "tone": 60,
+            "level": 60,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 2,
+          "model": "phaser_orange_1",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 100,
+            "resonance": 12,
+            "manual": 50,
+            "depth": 50
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 29,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21de82"
+    },
+    {
+      "index": 16,
+      "name": "EVolution 3",
+      "raw_hex": "45566f6c7574696f6e2033202020202041101049403f524328560000000101053d004535324a170203010d233200000000000000000000001d2d00241900",
+      "sha256": "d406820af89723ce60d4aacba0f27197e6fb89c4d38ea200b8480873897b0dca",
+      "amp_model": "erupt_iii_ch3",
+      "parameters_raw": {
+        "noise_reduction": 65,
+        "amp_model": 16,
+        "gain": 73,
+        "treble": 64,
+        "middle": 63,
+        "bass": 82,
+        "volume": 67,
+        "presence_or_tone": 40,
+        "resonance": 86,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 2,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 61,
+            "tone": 69,
+            "level": 53,
+            "treble": 50,
+            "middle": 74,
+            "bass": 23
+          }
+        },
+        "pedal2": {
+          "model_id": 2,
+          "model": "phaser_orange_1",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 259,
+            "resonance": 13,
+            "manual": 35,
+            "depth": 50
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 29,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21dec0"
+    },
+    {
+      "index": 17,
+      "name": "Fuel",
+      "raw_hex": "4675656c202020202020202020202020411011493f364a485b520100000101053d004535324a170659001c240000000000000000000000001d2d00241900",
+      "sha256": "4d11a307378890904ef222ad95a39b4e1ca4741b8fddb93a690cafca4b410ac1",
+      "amp_model": "boutique_metal",
+      "parameters_raw": {
+        "noise_reduction": 65,
+        "amp_model": 17,
+        "gain": 73,
+        "treble": 63,
+        "middle": 54,
+        "bass": 74,
+        "volume": 72,
+        "presence_or_tone": 91,
+        "resonance": 82,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 6,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 61,
+            "tone": 69,
+            "level": 53,
+            "treble": 50,
+            "middle": 74,
+            "bass": 23
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 89,
+            "level": 28,
+            "feedback": 36,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 29,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21defe"
+    },
+    {
+      "index": 18,
+      "name": "Orangish Rock",
+      "raw_hex": "4f72616e6769736820526f636b2020203f10124e31504745005a0100000101071b00522a32323204b80b290d1a3200000000000000000000282d00241900",
+      "sha256": "3b7e36087a6baf01f128a8b02d5c91b8ebc6ca0192fec48f14c9e7001ef796c8",
+      "amp_model": "brit_or_mkii",
+      "parameters_raw": {
+        "noise_reduction": 63,
+        "amp_model": 18,
+        "gain": 78,
+        "treble": 49,
+        "middle": 80,
+        "bass": 71,
+        "volume": 69,
+        "presence_or_tone": 0,
+        "resonance": 90,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 7,
+        "pedal2_model": 4,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 7,
+          "model": "fat_dist",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 27,
+            "tone": 82,
+            "level": 42,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 4,
+          "model": "tremolo",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 3000,
+            "depth": 41,
+            "duty": 13,
+            "shape": 26,
+            "level": 50
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 40,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 36,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21df3c"
+    },
+    {
+      "index": 19,
+      "name": "Blue Sky",
+      "raw_hex": "426c756520536b7920202020202020201e16132e3336244b1f25010001000101f603302432000005960126411a132a0000000000000000011a2600100900",
+      "sha256": "0af3eeda726177da1096ea56a2ee8ca5d3f1132b0965994260c58ce031108db2",
+      "amp_model": "original_cl",
+      "parameters_raw": {
+        "noise_reduction": 30,
+        "amp_model": 19,
+        "gain": 46,
+        "treble": 51,
+        "middle": 54,
+        "bass": 36,
+        "volume": 75,
+        "presence_or_tone": 31,
+        "resonance": 37,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 1,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 1,
+          "model": "chorus",
+          "enabled": true,
+          "parameters_raw": {
+            "speed_hz": 1014,
+            "depth": 48,
+            "manual": 36,
+            "mix": 50,
+            "low_cut": 0,
+            "high_cut": 0
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 406,
+            "level": 38,
+            "feedback": 65,
+            "tone": 26,
+            "mod_speed": 19,
+            "mod_depth": 42
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 26,
+            "time": 38,
+            "pre_delay_ms": 0,
+            "low_damp": 16,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21df7a"
+    },
+    {
+      "index": 20,
+      "name": "Otherside",
+      "raw_hex": "4f7468657273696465202020202020201b12002e322d394a393b0100000201003100323901000000c800324d0001230000000000000000002b33002e1900",
+      "sha256": "13758782929e4315a5a6f2cec2beb544927b7105b0bacbeebfce6d7a1b8e2c76",
+      "amp_model": "deluxe_cl_vibrato",
+      "parameters_raw": {
+        "noise_reduction": 27,
+        "amp_model": 0,
+        "gain": 46,
+        "treble": 50,
+        "middle": 45,
+        "bass": 57,
+        "volume": 74,
+        "presence_or_tone": 57,
+        "resonance": 59,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 0,
+        "pedal2_model": 0,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": true,
+          "parameters_raw": {
+            "sensitivity": 49,
+            "level": 50,
+            "attack": 57,
+            "voice": 1
+          }
+        },
+        "pedal2": {
+          "model_id": 0,
+          "model": "flanger",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 200,
+            "depth": 50,
+            "manual": 77,
+            "low_cut": 0,
+            "high_cut": 1,
+            "resonance": 35
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 43,
+            "time": 51,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21dfb8"
+    },
+    {
+      "index": 21,
+      "name": "Pride and Joy",
+      "raw_hex": "507269646520616e64204a6f79202020261201484712322d4f2701000000010243003d4f321c410231020c161f0000000000000000000001164b0d283400",
+      "sha256": "ec175fce2b1c3cd03a773f4059513fa4d56a5dcd1c57abc8e40f43fba89c41e3",
+      "amp_model": "deluxe_cl_normal",
+      "parameters_raw": {
+        "noise_reduction": 38,
+        "amp_model": 1,
+        "gain": 72,
+        "treble": 71,
+        "middle": 18,
+        "bass": 50,
+        "volume": 45,
+        "presence_or_tone": 79,
+        "resonance": 39,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 2,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 67,
+            "tone": 61,
+            "level": 79,
+            "treble": 50,
+            "middle": 28,
+            "bass": 65
+          }
+        },
+        "pedal2": {
+          "model_id": 2,
+          "model": "phaser_orange_1",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 561,
+            "resonance": 12,
+            "manual": 22,
+            "depth": 31
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 22,
+            "time": 75,
+            "pre_delay_ms": 13,
+            "low_damp": 40,
+            "high_damp": 52
+          }
+        }
+      },
+      "source_file_offset": "0x21dff6"
+    },
+    {
+      "index": 22,
+      "name": "Rock This Town",
+      "raw_hex": "526f636b205468697320546f776e20202616021b1f343d3e312401000000010032004339010000058a004f004d00170000000000000000011e0900100900",
+      "sha256": "8ad1685e01c7bd3ca2b2c4d0d957ffe4eff8552a6dd037d3556641be2ac702f1",
+      "amp_model": "tweed_4x10_bright",
+      "parameters_raw": {
+        "noise_reduction": 38,
+        "amp_model": 2,
+        "gain": 27,
+        "treble": 31,
+        "middle": 52,
+        "bass": 61,
+        "volume": 62,
+        "presence_or_tone": 49,
+        "resonance": 36,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 0,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": true,
+          "parameters_raw": {
+            "sensitivity": 50,
+            "level": 67,
+            "attack": 57,
+            "voice": 1
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 138,
+            "level": 79,
+            "feedback": 0,
+            "tone": 77,
+            "mod_speed": 0,
+            "mod_depth": 23
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 30,
+            "time": 9,
+            "pre_delay_ms": 0,
+            "low_damp": 16,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21e034"
+    },
+    {
+      "index": 23,
+      "name": "Brown Sugar",
+      "raw_hex": "42726f776e20537567617220202020202b06033a2a4332463c0001000000010911002139324b210568002800000000000000000000000001114b0d283400",
+      "sha256": "04f13e5d4cb7042a29b3ff06ddfd3859ad1b72b3e337966c8be113920b168902",
+      "amp_model": "tweed_4x10_normal",
+      "parameters_raw": {
+        "noise_reduction": 43,
+        "amp_model": 3,
+        "gain": 58,
+        "treble": 42,
+        "middle": 67,
+        "bass": 50,
+        "volume": 70,
+        "presence_or_tone": 60,
+        "resonance": 0,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 9,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 9,
+          "model": "fuzz",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 17,
+            "tone": 33,
+            "level": 57,
+            "treble": 50,
+            "middle": 75,
+            "bass": 33
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 104,
+            "level": 40,
+            "feedback": 0,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": false,
+          "parameters_raw": {
+            "mix": 17,
+            "time": 75,
+            "pre_delay_ms": 13,
+            "low_damp": 40,
+            "high_damp": 52
+          }
+        }
+      },
+      "source_file_offset": "0x21e072"
+    },
+    {
+      "index": 24,
+      "name": "Higher",
+      "raw_hex": "486967686572202020202020202020202512042e2e223f3f57530100000201002a004c39010000052501322c16094d0000000000000000003125002e1900",
+      "sha256": "fdc7c01dd358cdf7bab7c5dd39e09f61b4da350cb486d9f98a196b2f81ecc2d8",
+      "amp_model": "boutique_cl",
+      "parameters_raw": {
+        "noise_reduction": 37,
+        "amp_model": 4,
+        "gain": 46,
+        "treble": 46,
+        "middle": 34,
+        "bass": 63,
+        "volume": 63,
+        "presence_or_tone": 87,
+        "resonance": 83,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 0,
+        "pedal2_model": 5,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": true,
+          "parameters_raw": {
+            "sensitivity": 42,
+            "level": 76,
+            "attack": 57,
+            "voice": 1
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 293,
+            "level": 50,
+            "feedback": 44,
+            "tone": 22,
+            "mod_speed": 9,
+            "mod_depth": 77
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 49,
+            "time": 37,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e0b0"
+    },
+    {
+      "index": 25,
+      "name": "Got The Blues",
+      "raw_hex": "476f742054686520426c75657320202046160544451d1e381e3c0101010201032d004f26323232052c012119000005000000000000000002281d00001100",
+      "sha256": "ecfea6719a672e35e7749f7730af55871e1867b10553c53cbbfd64afbdcf3136",
+      "amp_model": "boutique_od",
+      "parameters_raw": {
+        "noise_reduction": 70,
+        "amp_model": 5,
+        "gain": 68,
+        "treble": 69,
+        "middle": 29,
+        "bass": 30,
+        "volume": 56,
+        "presence_or_tone": 30,
+        "resonance": 60,
+        "bright_cap": 1,
+        "low_cut": 1,
+        "mid_boost": 1,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 3,
+        "pedal2_model": 5,
+        "reverb_model": 2
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 45,
+            "tone": 79,
+            "level": 38,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 300,
+            "level": 33,
+            "feedback": 25,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 2,
+          "model": "hall",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 40,
+            "time": 29,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 17
+          }
+        }
+      },
+      "source_file_offset": "0x21e0ee"
+    },
+    {
+      "index": 26,
+      "name": "Day Tripper",
+      "raw_hex": "44617920547269707065722020202020241206303a2c27481d460100000000002200473901000005a4002c002c0000000000000000000003201100001900",
+      "sha256": "8e9fe224cd8c26ed736f541090194e381dfe79f6c73bfccb58f1253209a1a7d8",
+      "amp_model": "vox_ac30",
+      "parameters_raw": {
+        "noise_reduction": 36,
+        "amp_model": 6,
+        "gain": 48,
+        "treble": 58,
+        "middle": 44,
+        "bass": 39,
+        "volume": 72,
+        "presence_or_tone": 29,
+        "resonance": 70,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 0,
+        "pedal1_model": 0,
+        "pedal2_model": 5,
+        "reverb_model": 3
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": true,
+          "parameters_raw": {
+            "sensitivity": 34,
+            "level": 71,
+            "attack": 57,
+            "voice": 1
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 164,
+            "level": 44,
+            "feedback": 0,
+            "tone": 44,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 3,
+          "model": "plate",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 32,
+            "time": 17,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e12c"
+    },
+    {
+      "index": 27,
+      "name": "Tie Your Mother",
+      "raw_hex": "54696520596f7572204d6f74686572202e12073d2524195600460100010100032d004f26242532036400001f000000000000000000000003161200001900",
+      "sha256": "413f4a5fee5dbf99e3d72b1de85d4a26a6c895abaf705b5de33e1dd5baf4d83c",
+      "amp_model": "vox_ac30tb",
+      "parameters_raw": {
+        "noise_reduction": 46,
+        "amp_model": 7,
+        "gain": 61,
+        "treble": 37,
+        "middle": 36,
+        "bass": 25,
+        "volume": 86,
+        "presence_or_tone": 0,
+        "resonance": 70,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 1,
+        "power_class": 0,
+        "pedal1_model": 3,
+        "pedal2_model": 3,
+        "reverb_model": 3
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 45,
+            "tone": 79,
+            "level": 38,
+            "treble": 36,
+            "middle": 37,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 3,
+          "model": "phaser_orange_2",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 100,
+            "resonance": 0,
+            "manual": 31,
+            "depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 3,
+          "model": "plate",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 22,
+            "time": 18,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e16a"
+    },
+    {
+      "index": 28,
+      "name": "Black Dog",
+      "raw_hex": "426c61636b20446f67202020202020202e1608353247184627400100000101032b003526363232058200191e000005000000000000000003192000001900",
+      "sha256": "424ca650631d6db9a1c8733650aa1d779200ca7137b681a96521cbbc0d2745bc",
+      "amp_model": "brit_1959_treble",
+      "parameters_raw": {
+        "noise_reduction": 46,
+        "amp_model": 8,
+        "gain": 53,
+        "treble": 50,
+        "middle": 71,
+        "bass": 24,
+        "volume": 70,
+        "presence_or_tone": 39,
+        "resonance": 64,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 3,
+        "pedal2_model": 5,
+        "reverb_model": 3
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 43,
+            "tone": 53,
+            "level": 38,
+            "treble": 54,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 130,
+            "level": 25,
+            "feedback": 30,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 3,
+          "model": "plate",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 25,
+            "time": 32,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e1a8"
+    },
+    {
+      "index": 29,
+      "name": "Walk This Way",
+      "raw_hex": "57616c6b2054686973205761792020202f12094c4f210a453d640101000001084e003838491e32067c002b0f250000000000000000000001114b0d283400",
+      "sha256": "15e86b47f8d2ecbe644bcf6ab9a74876e0b500f49cc697b86cff4f32f847a020",
+      "amp_model": "brit_1959_normal",
+      "parameters_raw": {
+        "noise_reduction": 47,
+        "amp_model": 9,
+        "gain": 76,
+        "treble": 79,
+        "middle": 33,
+        "bass": 10,
+        "volume": 69,
+        "presence_or_tone": 61,
+        "resonance": 100,
+        "bright_cap": 1,
+        "low_cut": 1,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 8,
+        "pedal2_model": 6,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 8,
+          "model": "brit_lead",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 78,
+            "tone": 56,
+            "level": 56,
+            "treble": 73,
+            "middle": 30,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 124,
+            "level": 43,
+            "feedback": 15,
+            "tone": 37,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 17,
+            "time": 75,
+            "pre_delay_ms": 13,
+            "low_damp": 40,
+            "high_damp": 52
+          }
+        }
+      },
+      "source_file_offset": "0x21e1e6"
+    },
+    {
+      "index": 30,
+      "name": "Spoonman",
+      "raw_hex": "53706f6f6e6d616e20202020202020202e120a504a1f31421e300000000101021c003b3d3c1c3d03e80300323200000000000000000000002515002e1900",
+      "sha256": "3222cca85bf4140b1599de9be6a4a572a45a18194fe271798084f326da530a94",
+      "amp_model": "brit_800",
+      "parameters_raw": {
+        "noise_reduction": 46,
+        "amp_model": 10,
+        "gain": 80,
+        "treble": 74,
+        "middle": 31,
+        "bass": 49,
+        "volume": 66,
+        "presence_or_tone": 30,
+        "resonance": 48,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 3,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 28,
+            "tone": 59,
+            "level": 61,
+            "treble": 60,
+            "middle": 28,
+            "bass": 61
+          }
+        },
+        "pedal2": {
+          "model_id": 3,
+          "model": "phaser_orange_2",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 1000,
+            "resonance": 0,
+            "manual": 50,
+            "depth": 50
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 37,
+            "time": 21,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e224"
+    },
+    {
+      "index": 31,
+      "name": "Love of God",
+      "raw_hex": "4c6f7665206f6620476f64202020202044140b563519324a2d3701010100010337004e26411a320652021e402c0b2c000000000000000001354b0d283400",
+      "sha256": "2a3403d159ad568e689dbf44fe25a4d3d1b4e4121b39b78095f93f1e41aee7d1",
+      "amp_model": "brit_vm",
+      "parameters_raw": {
+        "noise_reduction": 68,
+        "amp_model": 11,
+        "gain": 86,
+        "treble": 53,
+        "middle": 25,
+        "bass": 50,
+        "volume": 74,
+        "presence_or_tone": 45,
+        "resonance": 55,
+        "bright_cap": 1,
+        "low_cut": 1,
+        "mid_boost": 1,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 3,
+        "pedal2_model": 6,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 55,
+            "tone": 78,
+            "level": 38,
+            "treble": 65,
+            "middle": 26,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 594,
+            "level": 30,
+            "feedback": 64,
+            "tone": 44,
+            "mod_speed": 11,
+            "mod_depth": 44
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 53,
+            "time": 75,
+            "pre_delay_ms": 13,
+            "low_damp": 40,
+            "high_damp": 52
+          }
+        }
+      },
+      "source_file_offset": "0x21e262"
+    },
+    {
+      "index": 32,
+      "name": "Raining Blood",
+      "raw_hex": "5261696e696e6720426c6f6f6420202043160c55452137424a5c0100010201032100456432322b065500180024000000000000000000000116480d4c2c00",
+      "sha256": "da16a5e03e8bccbd9e082c1e307f66e397bebc0df2c695495612ed52e85557af",
+      "amp_model": "sl_od",
+      "parameters_raw": {
+        "noise_reduction": 67,
+        "amp_model": 12,
+        "gain": 85,
+        "treble": 69,
+        "middle": 33,
+        "bass": 55,
+        "volume": 66,
+        "presence_or_tone": 74,
+        "resonance": 92,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 3,
+        "pedal2_model": 6,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 33,
+            "tone": 69,
+            "level": 100,
+            "treble": 50,
+            "middle": 50,
+            "bass": 43
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 85,
+            "level": 24,
+            "feedback": 0,
+            "tone": 36,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 22,
+            "time": 72,
+            "pre_delay_ms": 13,
+            "low_damp": 76,
+            "high_damp": 44
+          }
+        }
+      },
+      "source_file_offset": "0x21e2a0"
+    },
+    {
+      "index": 33,
+      "name": "Enter Sandman",
+      "raw_hex": "456e7465722053616e646d616e2020204a100d49501938451c640101010001032d004f26321f43067c0024003200000000000000000000001e36002e1900",
+      "sha256": "01cb4fb1e53bd73d4ceefc6593c0335e26364a1dcc7a3eea2d71869f5583da60",
+      "amp_model": "double_rec",
+      "parameters_raw": {
+        "noise_reduction": 74,
+        "amp_model": 13,
+        "gain": 73,
+        "treble": 80,
+        "middle": 25,
+        "bass": 56,
+        "volume": 69,
+        "presence_or_tone": 28,
+        "resonance": 100,
+        "bright_cap": 1,
+        "low_cut": 1,
+        "mid_boost": 1,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 3,
+        "pedal2_model": 6,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 45,
+            "tone": 79,
+            "level": 38,
+            "treble": 50,
+            "middle": 31,
+            "bass": 67
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 124,
+            "level": 36,
+            "feedback": 0,
+            "tone": 50,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 30,
+            "time": 54,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e2de"
+    },
+    {
+      "index": 34,
+      "name": "Know Your Enemy",
+      "raw_hex": "4b6e6f7720596f757220456e656d79204a140e51401b364e435f00000002010215003f46323224061e0023000700000000000000000000011f480d4c2c00",
+      "sha256": "3a3fe26338e39bc083b44ee8760c4e5c90a9e8bd85d2bf5828ed743804431d4b",
+      "amp_model": "cali_elation",
+      "parameters_raw": {
+        "noise_reduction": 74,
+        "amp_model": 14,
+        "gain": 81,
+        "treble": 64,
+        "middle": 27,
+        "bass": 54,
+        "volume": 78,
+        "presence_or_tone": 67,
+        "resonance": 95,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 6,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 21,
+            "tone": 63,
+            "level": 70,
+            "treble": 50,
+            "middle": 50,
+            "bass": 36
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 30,
+            "level": 35,
+            "feedback": 0,
+            "tone": 7,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 31,
+            "time": 72,
+            "pre_delay_ms": 13,
+            "low_damp": 76,
+            "high_damp": 44
+          }
+        }
+      },
+      "source_file_offset": "0x21e31c"
+    },
+    {
+      "index": 35,
+      "name": "AlwaysOnTheRun",
+      "raw_hex": "416c776179734f6e54686552756e202037060f264328364b3842010001000109120048483f2a3805410026001e00000000000000000000011f480d4c2c00",
+      "sha256": "b63362335619fb4855ee478080cd4ef3647e81e7af5b14cfa7336afe20aa2825",
+      "amp_model": "erupt_iii_ch2",
+      "parameters_raw": {
+        "noise_reduction": 55,
+        "amp_model": 15,
+        "gain": 38,
+        "treble": 67,
+        "middle": 40,
+        "bass": 54,
+        "volume": 75,
+        "presence_or_tone": 56,
+        "resonance": 66,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 9,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 9,
+          "model": "fuzz",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 18,
+            "tone": 72,
+            "level": 72,
+            "treble": 63,
+            "middle": 42,
+            "bass": 56
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 65,
+            "level": 38,
+            "feedback": 0,
+            "tone": 30,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": false,
+          "parameters_raw": {
+            "mix": 31,
+            "time": 72,
+            "pre_delay_ms": 13,
+            "low_damp": 76,
+            "high_damp": 44
+          }
+        }
+      },
+      "source_file_offset": "0x21e35a"
+    },
+    {
+      "index": 36,
+      "name": "Unchained",
+      "raw_hex": "556e636861696e656420202020202020470410424b0a43424539000000020102160048533d204200c800324d0001230000000000000000021c141d272600",
+      "sha256": "1c58fe64b7b8147c817ecb999aff1685aae6e754d219c67eb419ca3bedcd8e84",
+      "amp_model": "erupt_iii_ch3",
+      "parameters_raw": {
+        "noise_reduction": 71,
+        "amp_model": 16,
+        "gain": 66,
+        "treble": 75,
+        "middle": 10,
+        "bass": 67,
+        "volume": 66,
+        "presence_or_tone": 69,
+        "resonance": 57,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 2,
+        "pedal2_model": 0,
+        "reverb_model": 2
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 2,
+          "model": "tube_od",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 22,
+            "tone": 72,
+            "level": 83,
+            "treble": 61,
+            "middle": 32,
+            "bass": 66
+          }
+        },
+        "pedal2": {
+          "model_id": 0,
+          "model": "flanger",
+          "enabled": true,
+          "parameters_raw": {
+            "speed_hz": 200,
+            "depth": 50,
+            "manual": 77,
+            "low_cut": 0,
+            "high_cut": 1,
+            "resonance": 35
+          }
+        },
+        "reverb": {
+          "model_id": 2,
+          "model": "hall",
+          "enabled": false,
+          "parameters_raw": {
+            "mix": 28,
+            "time": 20,
+            "pre_delay_ms": 29,
+            "low_damp": 39,
+            "high_damp": 38
+          }
+        }
+      },
+      "source_file_offset": "0x21e398"
+    },
+    {
+      "index": 37,
+      "name": "Psychosocial",
+      "raw_hex": "50737963686f736f6369616c20202020480211394d0b4e4e395a0100000101032e003626321a4900c800324d0001230000000000000000004b2d002e1900",
+      "sha256": "f29d9272b42da8affc4fcebcaa680899afeae1b5d880a7bf9e2fef74b6c0fd2b",
+      "amp_model": "boutique_metal",
+      "parameters_raw": {
+        "noise_reduction": 72,
+        "amp_model": 17,
+        "gain": 57,
+        "treble": 77,
+        "middle": 11,
+        "bass": 78,
+        "volume": 78,
+        "presence_or_tone": 57,
+        "resonance": 90,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 3,
+        "pedal2_model": 0,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 46,
+            "tone": 54,
+            "level": 38,
+            "treble": 50,
+            "middle": 26,
+            "bass": 73
+          }
+        },
+        "pedal2": {
+          "model_id": 0,
+          "model": "flanger",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 200,
+            "depth": 50,
+            "manual": 77,
+            "low_cut": 0,
+            "high_cut": 1,
+            "resonance": 35
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": false,
+          "parameters_raw": {
+            "mix": 75,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e3d6"
+    },
+    {
+      "index": 38,
+      "name": "American Idiot",
+      "raw_hex": "416d65726963616e204964696f7420203a101238441e233f00640000000201081d002545323232042b172b005d43000000000000000000001b12002e1900",
+      "sha256": "cdf5905f2d0bd7212e0b0a366d0902b5dac5dedda593abf05711d296e5e7c57b",
+      "amp_model": "brit_or_mkii",
+      "parameters_raw": {
+        "noise_reduction": 58,
+        "amp_model": 18,
+        "gain": 56,
+        "treble": 68,
+        "middle": 30,
+        "bass": 35,
+        "volume": 63,
+        "presence_or_tone": 0,
+        "resonance": 100,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 8,
+        "pedal2_model": 4,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 8,
+          "model": "brit_lead",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 29,
+            "tone": 37,
+            "level": 69,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 4,
+          "model": "tremolo",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 5931,
+            "depth": 43,
+            "duty": 0,
+            "shape": 93,
+            "level": 67
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 27,
+            "time": 18,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e414"
+    },
+    {
+      "index": 39,
+      "name": "Get Lucky",
+      "raw_hex": "476574204c75636b79202020202020202612132d40142f47065001010000010026003d1c000000061e003200400b2c0000000000000000031c2b0d254500",
+      "sha256": "f00fbf5ab3d483da05428dc414cc5e9137ed1ca71367310cf726d2a0d459bbf0",
+      "amp_model": "original_cl",
+      "parameters_raw": {
+        "noise_reduction": 38,
+        "amp_model": 19,
+        "gain": 45,
+        "treble": 64,
+        "middle": 20,
+        "bass": 47,
+        "volume": 71,
+        "presence_or_tone": 6,
+        "resonance": 80,
+        "bright_cap": 1,
+        "low_cut": 1,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 0,
+        "pedal2_model": 6,
+        "reverb_model": 3
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": true,
+          "parameters_raw": {
+            "sensitivity": 38,
+            "level": 61,
+            "attack": 28,
+            "voice": 0
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 30,
+            "level": 50,
+            "feedback": 0,
+            "tone": 64,
+            "mod_speed": 11,
+            "mod_depth": 44
+          }
+        },
+        "reverb": {
+          "model_id": 3,
+          "model": "plate",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 28,
+            "time": 43,
+            "pre_delay_ms": 13,
+            "low_damp": 37,
+            "high_damp": 69
+          }
+        }
+      },
+      "source_file_offset": "0x21e452"
+    },
+    {
+      "index": 40,
+      "name": "Thrill Is Gone",
+      "raw_hex": "546872696c6c20497320476f6e6520201e10005638202e342a3b01000100010038002e46000000057e011c38240000000000000000000001270200100900",
+      "sha256": "02df054e8dd1901c1921a2d9498283085b2dbc6774a44200d813f1a90b7c2215",
+      "amp_model": "deluxe_cl_vibrato",
+      "parameters_raw": {
+        "noise_reduction": 30,
+        "amp_model": 0,
+        "gain": 86,
+        "treble": 56,
+        "middle": 32,
+        "bass": 46,
+        "volume": 52,
+        "presence_or_tone": 42,
+        "resonance": 59,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 0,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": false,
+          "parameters_raw": {
+            "sensitivity": 56,
+            "level": 46,
+            "attack": 70,
+            "voice": 0
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 382,
+            "level": 28,
+            "feedback": 56,
+            "tone": 36,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 39,
+            "time": 2,
+            "pre_delay_ms": 0,
+            "low_damp": 16,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21e490"
+    },
+    {
+      "index": 41,
+      "name": "Gravity",
+      "raw_hex": "477261766974792020202020202020201e120151372c3239241e01000000010539003b482a32290231020c161f0000000000000000000001114b0d283400",
+      "sha256": "ee40409cfa4a43e176be193b015de62c3091ca335622f33467cf592a2c21bff3",
+      "amp_model": "deluxe_cl_normal",
+      "parameters_raw": {
+        "noise_reduction": 30,
+        "amp_model": 1,
+        "gain": 81,
+        "treble": 55,
+        "middle": 44,
+        "bass": 50,
+        "volume": 57,
+        "presence_or_tone": 36,
+        "resonance": 30,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 2,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 57,
+            "tone": 59,
+            "level": 72,
+            "treble": 42,
+            "middle": 50,
+            "bass": 41
+          }
+        },
+        "pedal2": {
+          "model_id": 2,
+          "model": "phaser_orange_1",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 561,
+            "resonance": 12,
+            "manual": 22,
+            "depth": 31
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 17,
+            "time": 75,
+            "pre_delay_ms": 13,
+            "low_damp": 40,
+            "high_damp": 52
+          }
+        }
+      },
+      "source_file_offset": "0x21e4ce"
+    },
+    {
+      "index": 42,
+      "name": "BornOnTheBayou",
+      "raw_hex": "426f726e4f6e5468654261796f7520201e14022a1a15224700180000000001044600431f43243304601427231a4000000000000000000000212e002e1900",
+      "sha256": "397e27440d71af184a051dd3383ebfa651b59fa9f6cdcb1f40776988209c3172",
+      "amp_model": "tweed_4x10_bright",
+      "parameters_raw": {
+        "noise_reduction": 30,
+        "amp_model": 2,
+        "gain": 42,
+        "treble": 26,
+        "middle": 21,
+        "bass": 34,
+        "volume": 71,
+        "presence_or_tone": 0,
+        "resonance": 24,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 4,
+        "pedal2_model": 4,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 4,
+          "model": "treble_boost",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 70,
+            "tone": 67,
+            "level": 31,
+            "treble": 67,
+            "middle": 36,
+            "bass": 51
+          }
+        },
+        "pedal2": {
+          "model_id": 4,
+          "model": "tremolo",
+          "enabled": true,
+          "parameters_raw": {
+            "speed_hz": 5216,
+            "depth": 39,
+            "duty": 35,
+            "shape": 26,
+            "level": 64
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 33,
+            "time": 46,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e50c"
+    },
+    {
+      "index": 43,
+      "name": "Cocaine",
+      "raw_hex": "436f6361696e652020202020202020202b12034b4724323d2c0001000000010915003739374035049a0e1f00643200000000000000000001114b0d283400",
+      "sha256": "20ad478ac833c3e03e08b94f2539dcdf2e153d41bb08758e03ed26858144106f",
+      "amp_model": "tweed_4x10_normal",
+      "parameters_raw": {
+        "noise_reduction": 43,
+        "amp_model": 3,
+        "gain": 75,
+        "treble": 71,
+        "middle": 36,
+        "bass": 50,
+        "volume": 61,
+        "presence_or_tone": 44,
+        "resonance": 0,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 9,
+        "pedal2_model": 4,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 9,
+          "model": "fuzz",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 21,
+            "tone": 55,
+            "level": 57,
+            "treble": 55,
+            "middle": 64,
+            "bass": 53
+          }
+        },
+        "pedal2": {
+          "model_id": 4,
+          "model": "tremolo",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 3738,
+            "depth": 31,
+            "duty": 0,
+            "shape": 100,
+            "level": 50
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 17,
+            "time": 75,
+            "pre_delay_ms": 13,
+            "low_damp": 40,
+            "high_damp": 52
+          }
+        }
+      },
+      "source_file_offset": "0x21e54a"
+    },
+    {
+      "index": 44,
+      "name": "Purple Rain",
+      "raw_hex": "507572706c65205261696e20202020201e16042c390d58562151010000020001a7023f24400000052c011e20000005000000000000000001232700100900",
+      "sha256": "eb2d5fc1c5ee4ce24d4b5a8de9747538a2a92aa01d0b388d5056a4fcb72f7d34",
+      "amp_model": "boutique_cl",
+      "parameters_raw": {
+        "noise_reduction": 30,
+        "amp_model": 4,
+        "gain": 44,
+        "treble": 57,
+        "middle": 13,
+        "bass": 88,
+        "volume": 86,
+        "presence_or_tone": 33,
+        "resonance": 81,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 0,
+        "pedal1_model": 1,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 1,
+          "model": "chorus",
+          "enabled": true,
+          "parameters_raw": {
+            "speed_hz": 679,
+            "depth": 63,
+            "manual": 36,
+            "mix": 64,
+            "low_cut": 0,
+            "high_cut": 0
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 300,
+            "level": 30,
+            "feedback": 32,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 35,
+            "time": 39,
+            "pre_delay_ms": 0,
+            "low_damp": 16,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21e588"
+    },
+    {
+      "index": 45,
+      "name": "La Grange",
+      "raw_hex": "4c61204772616e6765202020202020203312051d292b1e4d491a0001010101043800283c342027052c0121190000050000000000000000002615002e1900",
+      "sha256": "79b4fa7d9ea39543d4d74be9488208b8fb39dc88cf467c49c37463bef459845d",
+      "amp_model": "boutique_od",
+      "parameters_raw": {
+        "noise_reduction": 51,
+        "amp_model": 5,
+        "gain": 29,
+        "treble": 41,
+        "middle": 43,
+        "bass": 30,
+        "volume": 77,
+        "presence_or_tone": 73,
+        "resonance": 26,
+        "bright_cap": 0,
+        "low_cut": 1,
+        "mid_boost": 1,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 4,
+        "pedal2_model": 5,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 4,
+          "model": "treble_boost",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 56,
+            "tone": 40,
+            "level": 60,
+            "treble": 52,
+            "middle": 32,
+            "bass": 39
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 300,
+            "level": 33,
+            "feedback": 25,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 38,
+            "time": 21,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e5c6"
+    },
+    {
+      "index": 46,
+      "name": "Pride",
+      "raw_hex": "507269646520202020202020202020202416062c2f2f224900460100000200002200493901000006a2013f3d000a45000000000000000003251f00001900",
+      "sha256": "b29fead50e2d0f592b5c3be73f28b6ab943ee13e48464d00885160da6bca3619",
+      "amp_model": "vox_ac30",
+      "parameters_raw": {
+        "noise_reduction": 36,
+        "amp_model": 6,
+        "gain": 44,
+        "treble": 47,
+        "middle": 47,
+        "bass": 34,
+        "volume": 73,
+        "presence_or_tone": 0,
+        "resonance": 70,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 2,
+        "power_class": 0,
+        "pedal1_model": 0,
+        "pedal2_model": 6,
+        "reverb_model": 3
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": true,
+          "parameters_raw": {
+            "sensitivity": 34,
+            "level": 73,
+            "attack": 57,
+            "voice": 1
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 418,
+            "level": 63,
+            "feedback": 61,
+            "tone": 0,
+            "mod_speed": 10,
+            "mod_depth": 69
+          }
+        },
+        "reverb": {
+          "model_id": 3,
+          "model": "plate",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 37,
+            "time": 31,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e604"
+    },
+    {
+      "index": 47,
+      "name": "No One Knows",
+      "raw_hex": "4e6f204f6e65204b6e6f7773202020203212075624202142004601000102000052004e390100000686002c001406480000000000000000002811002e1900",
+      "sha256": "c566e6f891b42392a7c2392bc263a3eaaa12849d1257e0c388cdd01a88a0e9b4",
+      "amp_model": "vox_ac30tb",
+      "parameters_raw": {
+        "noise_reduction": 50,
+        "amp_model": 7,
+        "gain": 86,
+        "treble": 36,
+        "middle": 32,
+        "bass": 33,
+        "volume": 66,
+        "presence_or_tone": 0,
+        "resonance": 70,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 2,
+        "power_class": 0,
+        "pedal1_model": 0,
+        "pedal2_model": 6,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": true,
+          "parameters_raw": {
+            "sensitivity": 82,
+            "level": 78,
+            "attack": 57,
+            "voice": 1
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 134,
+            "level": 44,
+            "feedback": 0,
+            "tone": 20,
+            "mod_speed": 6,
+            "mod_depth": 72
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 40,
+            "time": 17,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e642"
+    },
+    {
+      "index": 48,
+      "name": "Cliffs of Dover",
+      "raw_hex": "436c69666673206f6620446f7665722034160864394409440064010000010103540012262532320576013937000005000000000000000001172b00150900",
+      "sha256": "fb22576c7d7a927970a5c5c92395ec8d7d53a47caf82b60c7785455263a25fdf",
+      "amp_model": "brit_1959_treble",
+      "parameters_raw": {
+        "noise_reduction": 52,
+        "amp_model": 8,
+        "gain": 100,
+        "treble": 57,
+        "middle": 68,
+        "bass": 9,
+        "volume": 68,
+        "presence_or_tone": 0,
+        "resonance": 100,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 3,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 84,
+            "tone": 18,
+            "level": 38,
+            "treble": 37,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 374,
+            "level": 57,
+            "feedback": 55,
+            "tone": 0,
+            "mod_speed": 0,
+            "mod_depth": 5
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 23,
+            "time": 43,
+            "pre_delay_ms": 0,
+            "low_damp": 21,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21e680"
+    },
+    {
+      "index": 49,
+      "name": "Paranoid",
+      "raw_hex": "506172616e6f696420202020202020202f1209594f0d253c4d260100000001045900424153263500c800212b000106000000000000000001114b0d283400",
+      "sha256": "8bcc84c44f1b58a4f3b6dc12af99fe3f3763cdbb82d16aed697d631e1006ba97",
+      "amp_model": "brit_1959_normal",
+      "parameters_raw": {
+        "noise_reduction": 47,
+        "amp_model": 9,
+        "gain": 89,
+        "treble": 79,
+        "middle": 13,
+        "bass": 37,
+        "volume": 60,
+        "presence_or_tone": 77,
+        "resonance": 38,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 4,
+        "pedal2_model": 0,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 4,
+          "model": "treble_boost",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 89,
+            "tone": 66,
+            "level": 65,
+            "treble": 83,
+            "middle": 38,
+            "bass": 53
+          }
+        },
+        "pedal2": {
+          "model_id": 0,
+          "model": "flanger",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 200,
+            "depth": 33,
+            "manual": 43,
+            "low_cut": 0,
+            "high_cut": 1,
+            "resonance": 6
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 17,
+            "time": 75,
+            "pre_delay_ms": 13,
+            "low_damp": 40,
+            "high_damp": 52
+          }
+        }
+      },
+      "source_file_offset": "0x21e6be"
+    },
+    {
+      "index": 50,
+      "name": "The Trooper",
+      "raw_hex": "5468652054726f6f70657220202020203c120a493f262a4a1e200000010101033e002f262d3d4000f5002454000121000000000000000003222300001900",
+      "sha256": "f7663cbf9ad3b1321e9f7cc05971ac956fcf0a9968f2d7f3f3b546257d114258",
+      "amp_model": "brit_800",
+      "parameters_raw": {
+        "noise_reduction": 60,
+        "amp_model": 10,
+        "gain": 73,
+        "treble": 63,
+        "middle": 38,
+        "bass": 42,
+        "volume": 74,
+        "presence_or_tone": 30,
+        "resonance": 32,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 3,
+        "pedal2_model": 0,
+        "reverb_model": 3
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 3,
+          "model": "gold_drive",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 62,
+            "tone": 47,
+            "level": 38,
+            "treble": 45,
+            "middle": 61,
+            "bass": 64
+          }
+        },
+        "pedal2": {
+          "model_id": 0,
+          "model": "flanger",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 245,
+            "depth": 36,
+            "manual": 84,
+            "low_cut": 0,
+            "high_cut": 1,
+            "resonance": 33
+          }
+        },
+        "reverb": {
+          "model_id": 3,
+          "model": "plate",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 34,
+            "time": 35,
+            "pre_delay_ms": 0,
+            "low_damp": 0,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e6fc"
+    },
+    {
+      "index": 51,
+      "name": "Satch Boogie",
+      "raw_hex": "536174636820426f6f6769652020202046040b5144213f414c2a01000100010532006440324a32061b012538330000000000000000000001194b0d283400",
+      "sha256": "8daf9b78236b75dbcd85ba26dae30499613e1daabe616436ccc628852107bf85",
+      "amp_model": "brit_vm",
+      "parameters_raw": {
+        "noise_reduction": 70,
+        "amp_model": 11,
+        "gain": 81,
+        "treble": 68,
+        "middle": 33,
+        "bass": 63,
+        "volume": 65,
+        "presence_or_tone": 76,
+        "resonance": 42,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 6,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 50,
+            "tone": 100,
+            "level": 64,
+            "treble": 50,
+            "middle": 74,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 283,
+            "level": 37,
+            "feedback": 56,
+            "tone": 51,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": false,
+          "parameters_raw": {
+            "mix": 25,
+            "time": 75,
+            "pre_delay_ms": 13,
+            "low_damp": 40,
+            "high_damp": 52
+          }
+        }
+      },
+      "source_file_offset": "0x21e73a"
+    },
+    {
+      "index": 52,
+      "name": "Best of You",
+      "raw_hex": "42657374206f6620596f7520202020202e060c12482e304b48500100010001052e00404034192006f30023292400000000000000000000011f480d4c2c00",
+      "sha256": "6f29b53e8d4f9891fe787c7ef44ff5cfb20f6ce23cefebefbb6ad183aeea4aba",
+      "amp_model": "sl_od",
+      "parameters_raw": {
+        "noise_reduction": 46,
+        "amp_model": 12,
+        "gain": 18,
+        "treble": 72,
+        "middle": 46,
+        "bass": 48,
+        "volume": 75,
+        "presence_or_tone": 72,
+        "resonance": 80,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 6,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 46,
+            "tone": 64,
+            "level": 64,
+            "treble": 52,
+            "middle": 25,
+            "bass": 32
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 243,
+            "level": 35,
+            "feedback": 41,
+            "tone": 36,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": false,
+          "parameters_raw": {
+            "mix": 31,
+            "time": 72,
+            "pre_delay_ms": 13,
+            "low_damp": 76,
+            "high_damp": 44
+          }
+        }
+      },
+      "source_file_offset": "0x21e778"
+    },
+    {
+      "index": 53,
+      "name": "I Stand Alone",
+      "raw_hex": "49205374616e6420416c6f6e6520202044100d474306534a3d6401000102010532006440321c4106ed0232381e063a0000000000000000001e36002e1900",
+      "sha256": "9618d0c85a854d03b5033121e4d8552093c1e45009a128a65528958e92e3bb9b",
+      "amp_model": "double_rec",
+      "parameters_raw": {
+        "noise_reduction": 68,
+        "amp_model": 13,
+        "gain": 71,
+        "treble": 67,
+        "middle": 6,
+        "bass": 83,
+        "volume": 74,
+        "presence_or_tone": 61,
+        "resonance": 100,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 6,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 50,
+            "tone": 100,
+            "level": 64,
+            "treble": 50,
+            "middle": 28,
+            "bass": 65
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 749,
+            "level": 50,
+            "feedback": 56,
+            "tone": 30,
+            "mod_speed": 6,
+            "mod_depth": 58
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 30,
+            "time": 54,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e7b6"
+    },
+    {
+      "index": 54,
+      "name": "Teen Spirit",
+      "raw_hex": "5465656e20537069726974202020202029000e5b46325646433c00000102010178052b4822000105f3002e420f0a490000000000000000011f480d4c2c00",
+      "sha256": "65faa130fa09a55928b29a65fd882fcc29425ec4413fd99e85c81923db032aab",
+      "amp_model": "cali_elation",
+      "parameters_raw": {
+        "noise_reduction": 41,
+        "amp_model": 14,
+        "gain": 91,
+        "treble": 70,
+        "middle": 50,
+        "bass": 86,
+        "volume": 70,
+        "presence_or_tone": 67,
+        "resonance": 60,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 1,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 1,
+          "model": "chorus",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 1400,
+            "depth": 43,
+            "manual": 72,
+            "mix": 34,
+            "low_cut": 0,
+            "high_cut": 1
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": false,
+          "parameters_raw": {
+            "time_ms": 243,
+            "level": 46,
+            "feedback": 66,
+            "tone": 15,
+            "mod_speed": 10,
+            "mod_depth": 73
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": false,
+          "parameters_raw": {
+            "mix": 31,
+            "time": 72,
+            "pre_delay_ms": 13,
+            "low_damp": 76,
+            "high_damp": 44
+          }
+        }
+      },
+      "source_file_offset": "0x21e7f4"
+    },
+    {
+      "index": 55,
+      "name": "Sweet Child",
+      "raw_hex": "5377656574204368696c6420202020203c160f464126294f3d42010001000105410046404632220556011c382c00000000000000000000011f480d4c2c00",
+      "sha256": "f4a840a5a49a93b5f06f1c8ec6e4dbf65bcb56b1a9a3d9a006326c69e693179f",
+      "amp_model": "erupt_iii_ch2",
+      "parameters_raw": {
+        "noise_reduction": 60,
+        "amp_model": 15,
+        "gain": 70,
+        "treble": 65,
+        "middle": 38,
+        "bass": 41,
+        "volume": 79,
+        "presence_or_tone": 61,
+        "resonance": 66,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 5,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 65,
+            "tone": 70,
+            "level": 64,
+            "treble": 70,
+            "middle": 50,
+            "bass": 34
+          }
+        },
+        "pedal2": {
+          "model_id": 5,
+          "model": "tape_echo",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 342,
+            "level": 28,
+            "feedback": 56,
+            "tone": 44,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 31,
+            "time": 72,
+            "pre_delay_ms": 13,
+            "low_damp": 76,
+            "high_damp": 44
+          }
+        }
+      },
+      "source_file_offset": "0x21e832"
+    },
+    {
+      "index": 56,
+      "name": "Total Destroy",
+      "raw_hex": "546f74616c2044657374726f7920202043141046520a4e413a530000010201055e00554051393b06230020002d0000000000000000000002201d0a274a00",
+      "sha256": "81de8bddc4932c714b5d93ed7dd2e43176682de8b0182bc803a46ab7686ab7cc",
+      "amp_model": "erupt_iii_ch3",
+      "parameters_raw": {
+        "noise_reduction": 67,
+        "amp_model": 16,
+        "gain": 70,
+        "treble": 82,
+        "middle": 10,
+        "bass": 78,
+        "volume": 65,
+        "presence_or_tone": 58,
+        "resonance": 83,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 2,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 6,
+        "reverb_model": 2
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": false,
+          "parameters_raw": {
+            "drive": 94,
+            "tone": 85,
+            "level": 64,
+            "treble": 81,
+            "middle": 57,
+            "bass": 59
+          }
+        },
+        "pedal2": {
+          "model_id": 6,
+          "model": "analog_delay",
+          "enabled": true,
+          "parameters_raw": {
+            "time_ms": 35,
+            "level": 32,
+            "feedback": 0,
+            "tone": 45,
+            "mod_speed": 0,
+            "mod_depth": 0
+          }
+        },
+        "reverb": {
+          "model_id": 2,
+          "model": "hall",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 32,
+            "time": 29,
+            "pre_delay_ms": 10,
+            "low_damp": 39,
+            "high_damp": 74
+          }
+        }
+      },
+      "source_file_offset": "0x21e870"
+    },
+    {
+      "index": 57,
+      "name": "Walk",
+      "raw_hex": "57616c6b2020202020202020202020204b021164640043425b59010001010105300064643b472f03570100323200000000000000000000004b2d002e1900",
+      "sha256": "9df780cf0e8badb5f24d1cef401271dc689511681977798214726798cd249845",
+      "amp_model": "boutique_metal",
+      "parameters_raw": {
+        "noise_reduction": 75,
+        "amp_model": 17,
+        "gain": 100,
+        "treble": 100,
+        "middle": 0,
+        "bass": 67,
+        "volume": 66,
+        "presence_or_tone": 91,
+        "resonance": 89,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 1,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 5,
+        "pedal2_model": 3,
+        "reverb_model": 0
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 5,
+          "model": "rc_turbo",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 48,
+            "tone": 100,
+            "level": 100,
+            "treble": 59,
+            "middle": 71,
+            "bass": 47
+          }
+        },
+        "pedal2": {
+          "model_id": 3,
+          "model": "phaser_orange_2",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 343,
+            "resonance": 0,
+            "manual": 50,
+            "depth": 50
+          }
+        },
+        "reverb": {
+          "model_id": 0,
+          "model": "room",
+          "enabled": false,
+          "parameters_raw": {
+            "mix": 75,
+            "time": 45,
+            "pre_delay_ms": 0,
+            "low_damp": 46,
+            "high_damp": 25
+          }
+        }
+      },
+      "source_file_offset": "0x21e8ae"
+    },
+    {
+      "index": 58,
+      "name": "Alive",
+      "raw_hex": "416c697665202020202020202020202043121225440b3b4900520000000101081d0025453232320064001c0a010106000000000000000001173a00100900",
+      "sha256": "09aa50eb33761555ce42acad8ec0c896a6fc64fe53d6c7ca02f3f59a4a8486f6",
+      "amp_model": "brit_or_mkii",
+      "parameters_raw": {
+        "noise_reduction": 67,
+        "amp_model": 18,
+        "gain": 37,
+        "treble": 68,
+        "middle": 11,
+        "bass": 59,
+        "volume": 73,
+        "presence_or_tone": 0,
+        "resonance": 82,
+        "bright_cap": 0,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 1,
+        "power_class": 1,
+        "pedal1_model": 8,
+        "pedal2_model": 0,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 8,
+          "model": "brit_lead",
+          "enabled": true,
+          "parameters_raw": {
+            "drive": 29,
+            "tone": 37,
+            "level": 69,
+            "treble": 50,
+            "middle": 50,
+            "bass": 50
+          }
+        },
+        "pedal2": {
+          "model_id": 0,
+          "model": "flanger",
+          "enabled": false,
+          "parameters_raw": {
+            "speed_hz": 100,
+            "depth": 28,
+            "manual": 10,
+            "low_cut": 1,
+            "high_cut": 1,
+            "resonance": 6
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 23,
+            "time": 58,
+            "pre_delay_ms": 0,
+            "low_damp": 16,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21e8ec"
+    },
+    {
+      "index": 59,
+      "name": "Have A Cigar",
+      "raw_hex": "486176652041204369676172202020202616134f313f39390b2401000000010011003d26000000012d032c323200000000000000000000010f230e100900",
+      "sha256": "4996c94cd580ff3ae561d658f138a76c7e0475e68092d10e82fa756edcb2b236",
+      "amp_model": "original_cl",
+      "parameters_raw": {
+        "noise_reduction": 38,
+        "amp_model": 19,
+        "gain": 79,
+        "treble": 49,
+        "middle": 63,
+        "bass": 57,
+        "volume": 57,
+        "presence_or_tone": 11,
+        "resonance": 36,
+        "bright_cap": 1,
+        "low_cut": 0,
+        "mid_boost": 0,
+        "bias": 0,
+        "power_class": 1,
+        "pedal1_model": 0,
+        "pedal2_model": 1,
+        "reverb_model": 1
+      },
+      "effects": {
+        "pedal1": {
+          "model_id": 0,
+          "model": "compressor",
+          "enabled": true,
+          "parameters_raw": {
+            "sensitivity": 17,
+            "level": 61,
+            "attack": 38,
+            "voice": 0
+          }
+        },
+        "pedal2": {
+          "model_id": 1,
+          "model": "phaser_black",
+          "enabled": true,
+          "parameters_raw": {
+            "speed_hz": 813,
+            "resonance": 44,
+            "manual": 50,
+            "depth": 50
+          }
+        },
+        "reverb": {
+          "model_id": 1,
+          "model": "spring",
+          "enabled": true,
+          "parameters_raw": {
+            "mix": 15,
+            "time": 35,
+            "pre_delay_ms": 14,
+            "low_damp": 16,
+            "high_damp": 9
+          }
+        }
+      },
+      "source_file_offset": "0x21e92a"
+    }
+  ],
+  "limitations": [
+    "Static app contents, not a dump of the user amplifier.",
+    "The initializer copies this table at construction; live synchronization can replace app state.",
+    "Preset labels are exact stored names with trailing spaces removed; do not expand shortened labels into unsupported song/artist metadata."
+  ]
+}

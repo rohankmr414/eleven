@@ -77,3 +77,16 @@ The original DMG was unpacked using a deliberately limited userspace reader for 
 
 - Eight-record writer `0x1000f0d46`: `ev_8bab5a555f68605ae283893ed58b706ae68554b787ca164b8764e9089da6826a`. VTX header branch `0x1000f0e65`; write size 528 bytes.
 - Eleven-record writer `0x1000f2060`: `ev_fd86e65d4c70b7dc941fc098dfb434069e6ac8f7415ebd9f93021cf8bf2a488e`. VTX header branch `0x1000f21c5`; write size 714 bytes. Exact UI use remains unresolved.
+
+## Embedded 60-program VTX bank
+
+Additional static inspection found the complete bank at file offset `0x21dae0`, virtual address `0x10021dae0`. The executable identity is unchanged. The block is 3720 bytes, SHA-256 `8e2455cbff2e6cbc146ce2dd71201e87ca8ec9081d5e9285254f8ef2d3c21521`.
+
+- Xref to the bank: `0x10000d357`, evidence `ev_e64dadf0b470b8f9f660d8bc0b08d304c9ff77c9adef4c6985a31cbacb026998`.
+- Initializer `0x10000d34a` loads source `0x10021dae0` and destination `0x1002d2dd0`, copies a complete record, advances by `0x3e` (62) and terminates at `0xe88` (3720). Therefore its loop copies exactly 60 records. Evidence `ev_9893d57af3cce3dfc03f1a5e885729d3e42e445ed12dbf27a353534d0f852baa`.
+- Caller `0x1000c85b8` sets a count at `0x1002d5728` to at least `0x3c` and calls the initializer. Evidence `ev_2cce11d92c2d67042916350998d386394024bef7c5261932062970c78eb61f62`.
+- Direct Mach-O byte inspection ties that caller's vtable `0x100288400` to typeinfo `0x1002885b0`, whose name pointer `0x100227d60` contains `13VTXDataCenter`. The same vtable includes the previously inspected VTX receive handler `0x1000c92cc`. This corroborates the product-family attribution independently of song names.
+- All 60 records have printable 16-byte names, documented model IDs and in-range common/model-dependent parameters. Amp model indices repeat 0–19 three times.
+- The adjacent blank-name record at `0x21e968` is separately referenced and lies beyond the initializer's copy range. It is not part of the 60-program bank. Xref evidence `ev_0ecb7e40e711a87aaf45bed439a8aff53ab614d14e20d75e596819763c095759`.
+
+The readable catalog and lossless JSON are linked from [presets.md](presets.md). The expanded REA archive is retained locally as `preset-bank-rea.json` outside this repository. Static initialization establishes the embedded app contents; it does not establish equality to every live firmware's factory bank or the final state after device synchronization.
