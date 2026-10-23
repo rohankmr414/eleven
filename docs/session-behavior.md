@@ -55,6 +55,8 @@ Dispatch unsolicited `41`, `4E` and `21` events separately from ordinary replies
 
 Validate the parameter against the confirmed model context, encode `41`, send it, await completion and update the confirmed field. If hardware events conflict, refresh the full current program. Continuous-control updates may later be coalesced by parameter; safe rates and ordering must first be measured. Do not coalesce across a model change or save operation.
 
+A [gain-only hardware test](hardware-validation.md#temporary-gain-change) verified `41 04 00` with ACK and current-buffer readback: raw gain 100 → 99 → 100, only offset 19 changed, and the complete original record/mode was restored. This is evidence for one parameter at two values, not every effect parameter or sustained slider traffic.
+
 ### Select a program
 
 Resolve unsaved-edit policy in the caller, send `4E`, await ACK, then read mode and current program. Replace model-dependent field mappings from the received program. Program selection must not implicitly save the old sound.

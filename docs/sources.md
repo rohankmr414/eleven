@@ -46,6 +46,8 @@ The [preset inventory](presets.md) includes derived JSON reference data: 60 comp
 
 The owner ran the experimental read-only CoreMIDI probe from a normal macOS Terminal with Tone Room closed. Capture `20261023T173434.743506Z` contains 73 transmitted requests, 143 received MIDI packets and 73 assembled replies. Independent checks reassembled the packet stream, matched it to the recorded exchanges, verified the read-only transmit allowlist, compared all 60 factory records and reconstructed the eight-slot backup. [Hardware validation](hardware-validation.md) documents the scope; [machine-readable evidence](../reference/hardware-read-validation.json) retains artifact hashes and measurements. These observations supplement the static REA evidence and are not REA runtime captures.
 
+The owner then ran a separately authorized temporary gain test, capture `gain-20261023T174546.723684Z`. Its 13 exchanges include two gain mutations and ACKs, readback of the gain-only change and byte-exact restoration. [Gain evidence](../reference/hardware-gain-validation.json) retains the result and artifact hashes; full traffic and original user sound remain local. This live test does not establish persistent-write behavior.
+
 ## Known source ambiguities
 
 - The custom-dump response paragraph refers to request `1C`; the explicit request definition and inspected app builder use `31`.

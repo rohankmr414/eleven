@@ -8,8 +8,9 @@
 - A VTX-specific initializer copies 60 complete records from an embedded table. The [recovered bank](presets.md) passes model-dependent range validation and lossless offline MIDI packing checks; all 60 records now also match their live factory slots on the tested original VT20X.
 - The separate experimental codec passes 16 offline tests, including all 68 recovered records and comparison with the executable. Five macOS transport tests cover fragmentation, packet layout, the read-only allowlist and endpoint/reply matching. A synthetic capture integration check validates backup generation. That experimental code and vendor fixture are not part of this documentation-only repository.
 - The [2026-10-23 hardware session](hardware-validation.md) completed all 73 read requests, backed up eight user slots and preserved mode/current state between the initial and final reads.
+- A separate [temporary gain test](hardware-validation.md#temporary-gain-change) completed 13 exchanges: gain 100 → 99 → 100, two ACKs, only raw byte 19 changed, and byte-exact restoration of the original current buffer and mode. Ten offline gain-probe tests preceded that live run.
 
-**No hardware write was performed.** Identity, mode/current reads and both stored-program banks are verified on the owner's original VT20X with identity version fields 1.1 on macOS. Custom reads, mutations, physical-control notifications, reconnects, Linux/Pi and wireless transport remain unverified. The existing `test-vectors.json` examples remain synthetic and separate from live evidence.
+**Only current-buffer gain was mutated; no persistent-write command was sent.** Identity, mode/current reads, both stored-program banks and gain parameter `04/00` at values 99/100 are verified on the owner's original VT20X with identity version fields 1.1 on macOS. Custom reads, other mutations, physical-control notifications, reconnects, Linux/Pi and wireless transport remain unverified. The existing `test-vectors.json` examples remain synthetic and separate from live evidence.
 
 ## Offline checks for the future implementation
 
@@ -40,7 +41,7 @@ A panel program change can discard unsaved edits even though the client sends on
 
 ## Later mutation verification
 
-After backups and device reads are verified, test one reversible current-buffer parameter edit and read it back. Then test full-buffer preview, selection changes and model-change side effects. Persistent-write tests must target a deliberately chosen slot and verify its complete contents afterward. Test custom-default writes separately from user programs.
+The first reversible current-buffer parameter edit and readback are complete for gain. Next test other parameters, full-buffer preview, selection changes and model-change side effects. Persistent-write tests must target a deliberately chosen slot and verify its complete contents afterward. Test custom-default writes separately from user programs.
 
 For a future bank restore, verify partial-failure reporting and recovery before treating it as a normal workflow. Keep timing measurements specific to the transport and firmware used.
 

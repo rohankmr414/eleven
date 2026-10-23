@@ -1,6 +1,6 @@
 # VTX wire protocol
 
-Source: [VOX VTX MIDI Implementation v1.0](https://voxamps.com/wp-content/uploads/2019/07/VTX_Midi_Implementation.pdf), PDF pages 1–7. All byte literals here are hexadecimal; slot counts and lengths are decimal. Identity and reads `10`, `12`, `1C` were [validated on the owner's original VT20X](hardware-validation.md). Other commands remain unverified on hardware.
+Source: [VOX VTX MIDI Implementation v1.0](https://voxamps.com/wp-content/uploads/2019/07/VTX_Midi_Implementation.pdf), PDF pages 1–7. All byte literals here are hexadecimal; slot counts and lengths are decimal. Identity, reads `10`, `12`, `1C`, and a reversible gain edit through `41 04 00` were [validated on the owner's original VT20X](hardware-validation.md). Other parameters and commands remain unverified on hardware.
 
 ## Transport and framing
 

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "kind": "observed_temporary_gain_test",
+  "capture_id": "gain-20261023T174546.723684Z",
+  "started_at": "2026-10-23T17:45:46.723684+00:00",
+  "finished_at": "2026-10-23T17:45:47.826825+00:00",
+  "status": "passed",
+  "hardware": {
+    "model": "original VT20X, before Classic Blue",
+    "identity_hex": "f07e000602423401000001000100f7",
+    "major": 1,
+    "minor": 1
+  },
+  "host": {
+    "os": "macOS",
+    "version": "27.0.1",
+    "architecture": "arm64",
+    "execution": "user Terminal, Tone Room closed"
+  },
+  "parameter": {
+    "id": 4,
+    "sub_id": 0,
+    "name": "gain",
+    "raw_offset": 19,
+    "original_raw": 100,
+    "test_raw": 99,
+    "restored_raw": 100,
+    "display_divisor": 10
+  },
+  "gain_operations": [
+    {
+      "label": "gain_change",
+      "tx_hex": "f042300001344104006300f7",
+      "rx_hex": "f0423000013423f7",
+      "ack_latency_ms": 2.697
+    },
+    {
+      "label": "gain_restore",
+      "tx_hex": "f042300001344104006400f7",
+      "rx_hex": "f0423000013423f7",
+      "ack_latency_ms": 2.207
+    }
+  ],
+  "change_verified_by_readback": true,
+  "changed_raw_offsets": [
+    19
+  ],
+  "full_current_buffer_restored": true,
+  "mode_and_selection_unchanged": true,
+  "both_gain_acknowledgements_received": true,
+  "original_buffer_sha256": "42e7d78bae909670ad77760f384f4e5085c31eb9ff2d5513370da45b8f0a3aef",
+  "original_buffer_contents_in_repository": false,
+  "exchange_count": 13,
+  "received_midi_packets": 18,
+  "complete_reply_count": 13,
+  "persistent_write_commands_sent": 0,
+  "program_selection_commands_sent": 0,
+  "stored_user_slots_reread": false,
+  "local_artifacts": [
+    {
+      "name": "report.json",
+      "bytes": 5361,
+      "sha256": "c5664186bf61d8d8387cb0ae0ab3a8a94a21a65d18707f319046cae160e6403f"
+    },
+    {
+      "name": "traffic.jsonl",
+      "bytes": 6136,
+      "sha256": "69319993e0fc365843a5cac8f623bc437f26b01d2e7e96e327c5a09122c934a2"
+    },
+    {
+      "name": "current-before.bin",
+      "bytes": 62,
+      "sha256": "42e7d78bae909670ad77760f384f4e5085c31eb9ff2d5513370da45b8f0a3aef"
+    }
+  ],
+  "probe_sources": [
+    {
+      "name": "gain_probe_macos.py",
+      "sha256": "4a77f5a8400333fc99c5a983c826ab3af21d38a0716331367e4f732a01e84cfe"
+    },
+    {
+      "name": "probe_macos.py",
+      "sha256": "0a6c5333102223ff79e5833e3a506cf632ea823c7d44f7553ec477579e13d0c7"
+    },
+    {
+      "name": "vtx.mjs",
+      "sha256": "576e4f22ef7c04eeed0bbe9cbb5201da0b4fee5cace82f0e3d51a1e7d48c6190"
+    }
+  ],
+  "verification": [
+    "Independent JavaScript codec parsed every request/reply",
+    "Only parameter 04/00 was mutated, with values 99 then 100",
+    "Both mutations received a generic ACK",
+    "Only raw byte 19 changed on readback",
+    "All 62 original bytes and mode/selection were restored",
+    "Raw packet reassembly matches every recorded reply"
+  ],
+  "limitations": [
+    "Gain at values 99/100 in user mode only",
+    "No persistent saves or post-test user-slot reads",
+    "No other parameters, model/effect side effects or sustained-rate tests",
+    "Host-local USB only; Pi and wireless unverified"
+  ]
+}

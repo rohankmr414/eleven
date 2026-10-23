@@ -1,8 +1,8 @@
-# Original VT20X: read-only hardware validation
+# Original VT20X: hardware validation
 
 On 2026-10-23, the owner ran the experimental probe from macOS Terminal with Tone Room closed. **All 73 requests succeeded.** This establishes a working independent USB-MIDI read path to the owner's original VT20X and validates the recovered factory preset bank on this device.
 
-The probe and full capture remain outside this documentation-only repository. [hardware-read-validation.json](../reference/hardware-read-validation.json) contains the scoped result, packet counts, timings and artifact hashes.
+The probes and full captures remain outside this documentation-only repository. [hardware-read-validation.json](../reference/hardware-read-validation.json) contains the first session's scoped result, packet counts, timings and artifact hashes. A later [temporary gain test](#temporary-gain-change) also succeeded.
 
 ## Device and transport
 
@@ -34,14 +34,30 @@ The factory comparison includes every byte of all 60 records, including unused f
 
 The 528-byte user backup contains the observed 32-byte `.vtxprog` header and eight complete read-back records. Its SHA-256 is `0706b89330814212deb97a75e856b3f389a3928011908afe9823cfbaac23bcb3`. The backup and user settings remain local. It has not been restored to the amp or imported into Tone Room.
 
-## Packet fragmentation and timing
+## Read-session packet fragmentation and timing
 
 143 received CoreMIDI packets assembled into 73 complete SysEx messages. The two current dumps each arrived as **48 + 31 bytes**; all 68 stored dumps each arrived as **48 + 33 bytes**. Identity and mode replies each fit one packet. The transport must assemble a SysEx stream and must not treat one callback or packet as one message. These packet lengths describe this capture, not a required split point.
 
 Measured from immediately before the send call to receipt of the final matching packet, response latency was 1.274–3.946 ms, median 1.967 ms, mean 2.018 ms. The probe deliberately paused 75 ms before each request and used a five-second timeout with no retries. The full session took about 5.93 seconds. These measurements include host scheduling and do not establish maximum throughput, safe slider rates or write timing.
 
+## Temporary gain change
+
+Capture `gain-20261023T174546.723684Z` records a separate user-authorized current-buffer test on the same device/host. It completed 13 request/reply exchanges in about 1.10 seconds:
+
+1. Read identity, mode and the complete current program; save the original 62-byte record locally and recheck that state is stable.
+2. Send `F0 42 30 00 01 34 41 04 00 63 00 F7`, changing raw gain 100 → 99 (display 10.0 → 9.9).
+3. Receive `F0 42 30 00 01 34 23 F7` after 2.697 ms. Read the current buffer: only raw offset 19 differs, with the intended value 99. Mode/selection remain unchanged.
+4. Recheck state and send `F0 42 30 00 01 34 41 04 00 64 00 F7`, restoring raw gain 100.
+5. Receive the same ACK form after 2.207 ms. Read current/mode again: all 62 original bytes and mode/selection are restored exactly.
+
+18 received MIDI packets assembled into 13 replies. The original current-buffer SHA-256 is `42e7d78bae909670ad77760f384f4e5085c31eb9ff2d5513370da45b8f0a3aef`. The raw original sound remains local. [hardware-gain-validation.json](../reference/hardware-gain-validation.json) retains the selected command bytes, result and capture hashes.
+
+Independent JavaScript decoding of the actual frames confirmed the parameter ID/sub-ID, values, ACKs, single-byte change and full restoration; separate raw-packet reassembly matched the recorded replies. Every other transmission was identity or a mode/current read. No program selection, full-buffer upload or persistent-write command was sent. Stored user slots were not reread in this experiment, so it does not independently establish their post-test contents.
+
+This validates one temporary parameter edit at values 99/100 in user mode. It does not establish all parameter ranges, effect/model side effects, dirty-state UI behavior, persistent saves or safe continuous-slider rates.
+
 ## Evidence checks and remaining scope
 
 The local verification independently reassembled raw packets, matched the resulting frames to all recorded exchanges, checked that every transmitted frame was an allowed inquiry/read, verified each factory record and reconstructed the backup from the eight responses. Decoding reported no failures. Both mode and current-buffer bytes were unchanged between the first and last reads; sequential reads are not an atomic snapshot.
 
-Still unverified: custom-data reads (`31`), parameter changes (`41`), program selection (`4E`), current-buffer uploads (`40`), persistent writes (`11`, `4C`, `65`), hardware-control notifications, reconnect behavior, sustained traffic, Linux/Raspberry Pi, wireless transport, and Classic Blue compatibility. The next experiments are in the [verification plan](verification.md).
+Still unverified: custom-data reads (`31`), parameters other than the tested gain values, program selection (`4E`), current-buffer uploads (`40`), persistent writes (`11`, `4C`, `65`), hardware-control notifications, reconnect behavior, sustained traffic, Linux/Raspberry Pi, wireless transport, and Classic Blue compatibility. The next experiments are in the [verification plan](verification.md).

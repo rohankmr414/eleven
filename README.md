@@ -8,7 +8,7 @@ The amp exposes a **USB-MIDI System Exclusive (SysEx)** control protocol. It per
 
 This repository contains documentation and machine-readable protocol tables only. No application, MIDI transport, MCP server or device-control implementation is included.
 
-The reference combines VOX's published MIDI specification, static analysis of Tone Room 1.4.0 and a **successful read-only session with the owner's original VT20X**. All 73 requests succeeded on macOS: identity, mode/current settings, eight user slots and 60 factory slots. Every factory record matched the recovered app bank byte-for-byte. Writes, control-change events, Linux/Pi and wireless operation remain unverified. See [hardware validation](docs/hardware-validation.md).
+The reference combines VOX's published MIDI specification, static analysis of Tone Room 1.4.0 and **successful read and temporary gain-change tests on the owner's original VT20X**. All 73 read requests succeeded on macOS; every factory record matched the recovered app bank byte-for-byte. A separate test changed gain 10.0 → 9.9 → 10.0, received both ACKs and verified complete sound restoration. Other parameter edits, persistent writes, control-change events, Linux/Pi and wireless operation remain unverified. See [hardware validation](docs/hardware-validation.md).
 
 The hardware target is the owner's original VT20X. The protocol baseline is VOX's 2015 VTX specification; Classic Blue compatibility is not established. The original model already provides 20 amp models and 60 programs through Tone Room, plus eight writable user slots. See [hardware scope and sources](docs/sources.md#hardware-scope).
 
@@ -24,7 +24,7 @@ The hardware target is the owner's original VT20X. The protocol baseline is VOX'
 | [Session behavior](docs/session-behavior.md) | Synchronization, request matching, edits, saves, reconnects and failures |
 | [Implementation boundaries](docs/implementation.md) | Transport, codec, session and API responsibilities |
 | [Verification plan](docs/verification.md) | Offline checks, first hardware experiments and unresolved questions |
-| [Hardware validation](docs/hardware-validation.md) | Actual VT20X read results, transport observations and evidence limits |
+| [Hardware validation](docs/hardware-validation.md) | Actual VT20X read/edit results, transport observations and evidence limits |
 | [Sources](docs/sources.md) and [native evidence](docs/native-evidence.md) | Provenance, artifact identities, addresses and confidence limits |
 
 Machine-readable references:
@@ -34,6 +34,7 @@ Machine-readable references:
 - [vtx-app-presets.json](reference/vtx-app-presets.json): 60 complete VTX records recovered from the app's embedded bank, with decoded parameters and provenance.
 - [vtx-bundled-user-defaults.json](reference/vtx-bundled-user-defaults.json): eight installer default records; these are not the user's saved amp settings.
 - [hardware-read-validation.json](reference/hardware-read-validation.json): scoped live results and capture hashes; the full capture and user backup remain local.
+- [hardware-gain-validation.json](reference/hardware-gain-validation.json): the temporary gain edit, acknowledgements and byte-exact restoration evidence.
 
 ## State that must remain separate
 
@@ -51,4 +52,4 @@ Auditioning a library program, selecting an existing hardware slot and saving to
 - **Proposed:** behavior recommended for the new application; not a firmware guarantee.
 - **Unverified:** requires device or additional file/runtime evidence.
 
-The experimental read path and user-bank backup have been validated outside this documentation repository. Next are physical-control events, reconnect behavior and reversible current-buffer edits with readback. See the [verification plan](docs/verification.md).
+The experimental read path, user-bank backup and one reversible gain edit have been validated outside this documentation repository. Next are physical-control events, reconnect behavior and further current-buffer edits with readback. See the [verification plan](docs/verification.md).
