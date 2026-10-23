@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "provenance": "Synthetic specification-derived vectors; not captured device traffic. Numeric examples cross-checked with the earlier offline codec investigation.",
+  "source": "https://voxamps.com/wp-content/uploads/2019/07/VTX_Midi_Implementation.pdf",
+  "hardware_tested": false,
+  "frames": [
+    {
+      "name": "identity_inquiry",
+      "hex": "F0 7E 7F 06 01 F7",
+      "direction": "host_to_amp"
+    },
+    {
+      "name": "identity_reply_example",
+      "hex": "F0 7E 00 06 02 42 34 01 00 00 02 00 01 00 F7",
+      "direction": "amp_to_host",
+      "expected": {
+        "manufacturer": 66,
+        "family": [
+          52,
+          1
+        ],
+        "member": [
+          0,
+          0
+        ],
+        "major": 1,
+        "minor": 2
+      }
+    },
+    {
+      "name": "get_mode",
+      "hex": "F0 42 30 00 01 34 12 F7",
+      "direction": "host_to_amp"
+    },
+    {
+      "name": "get_current",
+      "hex": "F0 42 30 00 01 34 10 F7",
+      "direction": "host_to_amp"
+    },
+    {
+      "name": "get_user_b4",
+      "hex": "F0 42 30 00 01 34 1C 00 07 F7",
+      "direction": "host_to_amp"
+    },
+    {
+      "name": "get_factory_59",
+      "hex": "F0 42 30 00 01 34 1C 01 3B F7",
+      "direction": "host_to_amp"
+    },
+    {
+      "name": "get_custom_3",
+      "hex": "F0 42 30 00 01 34 31 00 03 F7",
+      "direction": "host_to_amp"
+    },
+    {
+      "name": "mode_state_factory_59",
+      "hex": "F0 42 30 00 01 34 42 01 3B F7",
+      "direction": "amp_to_host"
+    },
+    {
+      "name": "gain_5",
+      "hex": "F0 42 30 00 01 34 41 04 00 32 00 F7",
+      "direction": "host_to_amp",
+      "raw_value": 50,
+      "display_value": 5
+    },
+    {
+      "name": "delay_1200ms",
+      "hex": "F0 42 30 00 01 34 41 06 00 30 09 F7",
+      "direction": "host_to_amp",
+      "raw_value": 1200,
+      "precondition": {
+        "pedal2_model": [
+          5,
+          6
+        ]
+      },
+      "raw_record_bytes": "B0 04",
+      "raw_offset": 40
+    },
+    {
+      "name": "select_preset_12",
+      "hex": "F0 42 30 00 01 34 4E 01 0C F7",
+      "direction": "host_to_amp"
+    },
+    {
+      "name": "write_current_b4",
+      "hex": "F0 42 30 00 01 34 11 00 07 F7",
+      "direction": "host_to_amp",
+      "persistent_write": true
+    },
+    {
+      "name": "ack",
+      "hex": "F0 42 30 00 01 34 23 F7",
+      "direction": "amp_to_host"
+    },
+    {
+      "name": "nak",
+      "hex": "F0 42 30 00 01 34 24 F7",
+      "direction": "amp_to_host"
+    },
+    {
+      "name": "format_error",
+      "hex": "F0 42 30 00 01 34 26 F7",
+      "direction": "amp_to_host"
+    },
+    {
+      "name": "write_ack_b4",
+      "hex": "F0 42 30 00 01 34 21 00 07 F7",
+      "direction": "amp_to_host"
+    },
+    {
+      "name": "write_nak_b4",
+      "hex": "F0 42 30 00 01 34 22 00 07 F7",
+      "direction": "amp_to_host"
+    }
+  ],
+  "packing": [
+    {
+      "raw": "00 7F 80 FF 55 AA 01",
+      "packed": "2C 00 7F 00 7F 55 2A 01"
+    },
+    {
+      "raw": "80 FF",
+      "packed": "03 00 7F"
+    },
+    {
+      "raw": "FF FF FF FF FF FF",
+      "packed": "3F 7F 7F 7F 7F 7F 7F"
+    }
+  ],
+  "reject_examples": [
+    {
+      "hex": "F0 42 30 00 01 35 23 F7",
+      "reason": "Wrong device family"
+    },
+    {
+      "hex": "F0 42 30 00 01 34 23 00 F7",
+      "reason": "ACK with extra payload byte"
+    },
+    {
+      "hex": "F0 42 30 00 01 34 41 04 00 FF 00 F7",
+      "reason": "Non-data byte inside parameter value"
+    },
+    {
+      "hex": "F0 42 30 00 01 34 1C 00 08 F7",
+      "reason": "User slot 8 outside documented range"
+    },
+    {
+      "hex": "F0 42 30 00 01 34 41 08 05 40 00 F7",
+      "reason": "Unspecified reverb field; no documented parameter sub-ID 5"
+    },
+    {
+      "hex": "F0 42 30 00 01 34 23",
+      "reason": "Truncated frame without F7"
+    }
+  ]
+}

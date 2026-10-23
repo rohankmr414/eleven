@@ -1,0 +1,46 @@
+# voxlink
+
+Implementation reference for an independent VOX Valvetronix X controller, initially targeting the VT20X.
+
+The amp exposes a **USB-MIDI System Exclusive (SysEx)** control protocol. It performs the audio processing; voxlink will manage sounds, parameters and presets. A future interface or MCP server can use the same device service.
+
+## Current scope
+
+This repository contains documentation and machine-readable protocol tables only. No application, MIDI transport, MCP server or device-control implementation is included.
+
+The reference combines VOX's published MIDI specification with static analysis of Tone Room 1.4.0 and its bundled preset file. **No physical amplifier has been tested.** Packet formats have documentary and selected native-code corroboration; response timing, USB compatibility and successful writes remain unverified.
+
+## Implementation reading order
+
+| Reference | What it answers |
+| --- | --- |
+| [API map](docs/api-map.md) | Which operations to expose, their arguments, results and persistence effects |
+| [Wire protocol](docs/wire-protocol.md) | Discovery, frame layouts, commands, replies, events and seven-bit packing |
+| [Program and parameter layout](docs/program-layout.md) | Raw record offsets, model IDs, ranges, units and custom defaults |
+| [Preset files](docs/preset-files.md) | `.vtxprog` headers and the observed eight- and eleven-record variants |
+| [Session behavior](docs/session-behavior.md) | Synchronization, request matching, edits, saves, reconnects and failures |
+| [Implementation boundaries](docs/implementation.md) | Transport, codec, session and API responsibilities |
+| [Verification plan](docs/verification.md) | Offline checks, first hardware experiments and unresolved questions |
+| [Sources](docs/sources.md) and [native evidence](docs/native-evidence.md) | Provenance, artifact identities, addresses and confidence limits |
+
+Machine-readable references:
+
+- [vtx-midi-reference.json](reference/vtx-midi-reference.json): numeric command/parameter map; numbers are decimal and offsets are zero-based.
+- [test-vectors.json](reference/test-vectors.json): specification-derived examples for a future codec. These are synthetic examples, not captured amp traffic.
+
+## State that must remain separate
+
+1. **Current program:** the temporary sound being played and edited.
+2. **Stored user programs:** eight persistent slots, A1–A4 and B1–B4.
+3. **Local library:** programs and backups stored outside the amplifier.
+
+Auditioning a library program, selecting an existing hardware slot and saving to that slot are different operations. Factory presets are readable; documented program writes target user memory.
+
+## Evidence labels
+
+- **Specified:** defined in the official VOX MIDI implementation or owner's manual.
+- **Observed statically:** corroborated in the supplied Tone Room binary or bundled files.
+- **Proposed:** behavior recommended for the new application; not a firmware guarantee.
+- **Unverified:** requires device or additional file/runtime evidence.
+
+The next implementation milestone is read-only discovery, current-state retrieval and backup of all eight user slots. See the [verification plan](docs/verification.md).

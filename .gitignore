@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+*.dmg
+*.pkg
+*.app/
+*.vtxprog
+artifacts/
+captures/
+node_modules/
+dist/

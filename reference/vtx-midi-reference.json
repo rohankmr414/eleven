@@ -1,0 +1,1778 @@
+{
+  "title": "VTX MIDI implementation facts",
+  "schema_version": 1,
+  "source": {
+    "url": "https://voxamps.com/wp-content/uploads/2019/07/VTX_Midi_Implementation.pdf",
+    "document_version": "1.0",
+    "document_date": "2015-07-31",
+    "pages_are": "1-based PDF pages",
+    "retrieved": "2026-10-23"
+  },
+  "verification": {
+    "hardware_tested": false,
+    "app_corroborated": "selected fields only: packing order, parameter value splitting, custom request/write function codes",
+    "app_evidence_file": "../docs/native-evidence.md",
+    "app_evidence_ids": [
+      "ev_67469ab787e14e2de500d575119551240e6da54ddf6f53900894c9677b8e8f06",
+      "ev_18495d3ea65edf4533a0f1fd8a13793fc7666186ff448c643a485ec956783b1b",
+      "ev_811a702875b41652e011f678ae681281efe006a185907d34eedf18c0529573d5",
+      "ev_594046bc654457f97e33ae6a16f24478ed4cf8d065cc853babffe51674b07cc1"
+    ],
+    "text_parsed": true,
+    "diagram_visual_verification": false,
+    "diagram_limit": "web PDF screenshot tool unavailable; packing follows the text diagram on PDF page 7 and is independently corroborated by Tone Room's native routine",
+    "app_evidence_scope": "Selected static findings are summarized in the linked document. Original REA dossiers and vendor artifacts are retained outside this repository."
+  },
+  "wire": {
+    "header": [
+      240,
+      66,
+      48,
+      0,
+      1,
+      52
+    ],
+    "end": 247,
+    "channel": 0,
+    "value_encoding": "v = low7 | (high7 << 7)",
+    "source_pages": [
+      1,
+      2,
+      6
+    ]
+  },
+  "discovery": {
+    "request": [
+      240,
+      126,
+      127,
+      6,
+      1,
+      247
+    ],
+    "reply": [
+      240,
+      126,
+      0,
+      6,
+      2,
+      66,
+      52,
+      1,
+      0,
+      0,
+      "minor",
+      0,
+      "major",
+      0,
+      247
+    ],
+    "family": [
+      52,
+      1
+    ],
+    "manufacturer": 66,
+    "model_distinction": "This identity format identifies the VTX family; no VT20X-specific member identifier is documented.",
+    "source_pages": [
+      1,
+      2
+    ]
+  },
+  "messages": [
+    {
+      "name": "get_mode",
+      "function": 18,
+      "payload": [],
+      "reply": [
+        66
+      ],
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "name": "mode_state",
+      "function": 66,
+      "payload": [
+        "mode",
+        "program"
+      ],
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "name": "get_current",
+      "function": 16,
+      "payload": [],
+      "reply": [
+        64,
+        36
+      ],
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "name": "current_dump",
+      "function": 64,
+      "payload": [
+        "packed_program_71"
+      ],
+      "direction": "both",
+      "write_effect": "edit_buffer",
+      "reply": [
+        35,
+        36
+      ],
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "name": "get_program",
+      "function": 28,
+      "payload": [
+        "bank",
+        "program"
+      ],
+      "reply": [
+        76,
+        36
+      ],
+      "source_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "program_dump",
+      "function": 76,
+      "payload": [
+        "bank",
+        "program",
+        "packed_program_71"
+      ],
+      "direction": "both",
+      "write_effect": "internal_memory; bank=0 only for incoming writes",
+      "reply": [
+        35,
+        36
+      ],
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "name": "get_custom",
+      "function": 49,
+      "payload": [
+        0,
+        "custom_index"
+      ],
+      "reply": [
+        101,
+        36
+      ],
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "name": "custom_dump",
+      "function": 101,
+      "payload": [
+        0,
+        "custom_index",
+        "packed_custom_71"
+      ],
+      "direction": "both",
+      "write_effect": "internal_memory",
+      "reply": [
+        35,
+        36
+      ],
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "name": "write_current",
+      "function": 17,
+      "payload": [
+        0,
+        "user_program"
+      ],
+      "reply": [
+        33,
+        34
+      ],
+      "write_effect": "internal_memory",
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "name": "set_mode",
+      "function": 78,
+      "payload": [
+        "mode",
+        "program"
+      ],
+      "direction": "both",
+      "reply": [
+        35,
+        36
+      ],
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "name": "set_parameter",
+      "function": 65,
+      "payload": [
+        "parameter_id",
+        "sub_id",
+        "value_low7",
+        "value_high7"
+      ],
+      "direction": "both",
+      "reply": [
+        35,
+        36
+      ],
+      "source_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "name": "ack",
+      "function": 35,
+      "payload": [],
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "name": "nak",
+      "function": 36,
+      "payload": [],
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "name": "format_error",
+      "function": 38,
+      "payload": [],
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "name": "write_ack",
+      "function": 33,
+      "payload": [
+        0,
+        "user_program"
+      ],
+      "source_pages": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "write_nak",
+      "function": 34,
+      "payload": [
+        0,
+        "user_program"
+      ],
+      "source_pages": [
+        7
+      ]
+    }
+  ],
+  "selectors": {
+    "modes": {
+      "user": 0,
+      "preset": 1,
+      "manual": 2
+    },
+    "banks": {
+      "user": 0,
+      "preset": 1
+    },
+    "user_program": [
+      0,
+      7
+    ],
+    "preset_program": [
+      0,
+      59
+    ],
+    "custom_index": [
+      0,
+      3
+    ],
+    "source_pages": [
+      3,
+      4,
+      5,
+      15,
+      16,
+      17
+    ],
+    "program_count_source": "https://voxamps.com/wp-content/uploads/support/VT20X_VT40X_OM_EFGS1_WEB.pdf#page=13",
+    "manual_program_index": "Not separately constrained in the protocol document."
+  },
+  "packing": {
+    "raw_bytes": 62,
+    "packed_bytes": 71,
+    "raw_group": 7,
+    "packed_group": 8,
+    "prefix_bit_j": "(raw[j] >> 7) & 1",
+    "data_byte_j": "raw[j] & 127",
+    "decode_byte_j": "packed[j + 1] | (((packed[0] >> j) & 1) << 7)",
+    "last_raw_group": 6,
+    "last_packed_group": 7,
+    "source_pages": [
+      7
+    ]
+  },
+  "program": {
+    "raw_bytes": 62,
+    "name": {
+      "offset": 0,
+      "length": 16,
+      "encoding": "ascii",
+      "allowed": [
+        32,
+        126
+      ],
+      "parameter_id": 0,
+      "parameter_sub_ids": [
+        0,
+        15
+      ],
+      "source_pages": [
+        8
+      ]
+    },
+    "effect_enable": {
+      "offset": 17,
+      "bits": {
+        "pedal1": 1,
+        "pedal2": 2,
+        "reverb": 4
+      },
+      "parameter_id": 2,
+      "sub_ids": {
+        "pedal1": 1,
+        "pedal2": 2,
+        "reverb": 4
+      },
+      "source_pages": [
+        8
+      ]
+    },
+    "parameters": [
+      {
+        "key": "noise_reduction",
+        "id": 1,
+        "sub": 0,
+        "offset": 16,
+        "width": 1,
+        "raw": [
+          0,
+          100
+        ],
+        "display_divisor": 10,
+        "source_pages": [
+          8
+        ]
+      },
+      {
+        "key": "amp_model",
+        "id": 3,
+        "sub": 0,
+        "offset": 18,
+        "width": 1,
+        "raw": [
+          0,
+          19
+        ],
+        "source_pages": [
+          8,
+          10
+        ]
+      },
+      {
+        "key": "gain",
+        "id": 4,
+        "sub": 0,
+        "offset": 19,
+        "width": 1,
+        "raw": [
+          0,
+          100
+        ],
+        "display_divisor": 10,
+        "source_pages": [
+          8
+        ]
+      },
+      {
+        "key": "treble",
+        "id": 4,
+        "sub": 1,
+        "offset": 20,
+        "width": 1,
+        "raw": [
+          0,
+          100
+        ],
+        "display_divisor": 10,
+        "source_pages": [
+          8
+        ]
+      },
+      {
+        "key": "middle",
+        "id": 4,
+        "sub": 2,
+        "offset": 21,
+        "width": 1,
+        "raw": [
+          0,
+          100
+        ],
+        "display_divisor": 10,
+        "source_pages": [
+          8
+        ]
+      },
+      {
+        "key": "bass",
+        "id": 4,
+        "sub": 3,
+        "offset": 22,
+        "width": 1,
+        "raw": [
+          0,
+          100
+        ],
+        "display_divisor": 10,
+        "source_pages": [
+          8
+        ]
+      },
+      {
+        "key": "volume",
+        "id": 4,
+        "sub": 4,
+        "offset": 23,
+        "width": 1,
+        "raw": [
+          0,
+          100
+        ],
+        "display_divisor": 10,
+        "source_pages": [
+          8
+        ]
+      },
+      {
+        "key": "presence_or_tone",
+        "id": 4,
+        "sub": 5,
+        "offset": 24,
+        "width": 1,
+        "raw": [
+          0,
+          100
+        ],
+        "display_divisor": 10,
+        "source_pages": [
+          8
+        ]
+      },
+      {
+        "key": "resonance",
+        "id": 4,
+        "sub": 6,
+        "offset": 25,
+        "width": 1,
+        "raw": [
+          0,
+          100
+        ],
+        "display_divisor": 10,
+        "source_pages": [
+          8
+        ]
+      },
+      {
+        "key": "bright_cap",
+        "id": 4,
+        "sub": 7,
+        "offset": 26,
+        "width": 1,
+        "raw": [
+          0,
+          1
+        ],
+        "source_pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "key": "low_cut",
+        "id": 4,
+        "sub": 8,
+        "offset": 27,
+        "width": 1,
+        "raw": [
+          0,
+          1
+        ],
+        "source_pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "key": "mid_boost",
+        "id": 4,
+        "sub": 9,
+        "offset": 28,
+        "width": 1,
+        "raw": [
+          0,
+          1
+        ],
+        "source_pages": [
+          8,
+          9
+        ]
+      },
+      {
+        "key": "bias",
+        "id": 4,
+        "sub": 10,
+        "offset": 29,
+        "width": 1,
+        "raw": [
+          0,
+          2
+        ],
+        "enum": [
+          "off",
+          "cold",
+          "hot"
+        ],
+        "source_pages": [
+          9
+        ]
+      },
+      {
+        "key": "power_class",
+        "id": 4,
+        "sub": 11,
+        "offset": 30,
+        "width": 1,
+        "raw": [
+          0,
+          1
+        ],
+        "enum": [
+          "A",
+          "AB"
+        ],
+        "source_pages": [
+          9
+        ]
+      },
+      {
+        "key": "pedal1_model",
+        "id": 3,
+        "sub": 1,
+        "offset": 31,
+        "width": 1,
+        "raw": [
+          0,
+          9
+        ],
+        "source_pages": [
+          9
+        ]
+      },
+      {
+        "key": "pedal2_model",
+        "id": 3,
+        "sub": 2,
+        "offset": 39,
+        "width": 1,
+        "raw": [
+          0,
+          6
+        ],
+        "source_pages": [
+          9
+        ]
+      },
+      {
+        "key": "reverb_model",
+        "id": 3,
+        "sub": 4,
+        "offset": 55,
+        "width": 1,
+        "raw": [
+          0,
+          3
+        ],
+        "source_pages": [
+          9
+        ]
+      }
+    ],
+    "reserved_ranges": [
+      [
+        47,
+        54
+      ]
+    ],
+    "unspecified_offsets": [
+      61
+    ],
+    "source_pages": [
+      8,
+      9,
+      15
+    ]
+  },
+  "amp_models": [
+    {
+      "id": 0,
+      "key": "deluxe_cl_vibrato",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 1,
+      "key": "deluxe_cl_normal",
+      "presence_is_tone": false,
+      "bright_cap_available": false,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 2,
+      "key": "tweed_4x10_bright",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 3,
+      "key": "tweed_4x10_normal",
+      "presence_is_tone": false,
+      "bright_cap_available": false,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 4,
+      "key": "boutique_cl",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 5,
+      "key": "boutique_od",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 6,
+      "key": "vox_ac30",
+      "presence_is_tone": true,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 7,
+      "key": "vox_ac30tb",
+      "presence_is_tone": true,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 8,
+      "key": "brit_1959_treble",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 9,
+      "key": "brit_1959_normal",
+      "presence_is_tone": false,
+      "bright_cap_available": false,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 10,
+      "key": "brit_800",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 11,
+      "key": "brit_vm",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 12,
+      "key": "sl_od",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 13,
+      "key": "double_rec",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 14,
+      "key": "cali_elation",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 15,
+      "key": "erupt_iii_ch2",
+      "presence_is_tone": false,
+      "bright_cap_available": false,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 16,
+      "key": "erupt_iii_ch3",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 17,
+      "key": "boutique_metal",
+      "presence_is_tone": false,
+      "bright_cap_available": false,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 18,
+      "key": "brit_or_mkii",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "id": 19,
+      "key": "original_cl",
+      "presence_is_tone": false,
+      "bright_cap_available": true,
+      "source_pages": [
+        10
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "key": "compressor",
+      "models": [
+        0
+      ],
+      "id": 5,
+      "base": 32,
+      "source_pages": [
+        10
+      ],
+      "parameters": [
+        {
+          "key": "sensitivity",
+          "id": 5,
+          "sub": 0,
+          "offset": 32,
+          "width": 2,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            10
+          ]
+        },
+        {
+          "key": "level",
+          "id": 5,
+          "sub": 1,
+          "offset": 34,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            10
+          ]
+        },
+        {
+          "key": "attack",
+          "id": 5,
+          "sub": 2,
+          "offset": 35,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            10
+          ]
+        },
+        {
+          "key": "voice",
+          "id": 5,
+          "sub": 3,
+          "offset": 36,
+          "width": 1,
+          "raw": [
+            0,
+            2
+          ],
+          "display_divisor": 1,
+          "source_pages": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "key": "chorus",
+      "models": [
+        1
+      ],
+      "id": 5,
+      "base": 32,
+      "source_pages": [
+        11
+      ],
+      "parameters": [
+        {
+          "key": "speed_hz",
+          "id": 5,
+          "sub": 0,
+          "offset": 32,
+          "width": 2,
+          "raw": [
+            100,
+            10000
+          ],
+          "display_divisor": 1000,
+          "source_pages": [
+            11
+          ]
+        },
+        {
+          "key": "depth",
+          "id": 5,
+          "sub": 1,
+          "offset": 34,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11
+          ]
+        },
+        {
+          "key": "manual",
+          "id": 5,
+          "sub": 2,
+          "offset": 35,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11
+          ]
+        },
+        {
+          "key": "mix",
+          "id": 5,
+          "sub": 3,
+          "offset": 36,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11
+          ]
+        },
+        {
+          "key": "low_cut",
+          "id": 5,
+          "sub": 4,
+          "offset": 37,
+          "width": 1,
+          "raw": [
+            0,
+            1
+          ],
+          "display_divisor": 1,
+          "source_pages": [
+            11
+          ]
+        },
+        {
+          "key": "high_cut",
+          "id": 5,
+          "sub": 5,
+          "offset": 38,
+          "width": 1,
+          "raw": [
+            0,
+            1
+          ],
+          "display_divisor": 1,
+          "source_pages": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "key": "drive_distortion",
+      "models": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "id": 5,
+      "base": 32,
+      "source_pages": [
+        11,
+        12
+      ],
+      "parameters": [
+        {
+          "key": "drive",
+          "id": 5,
+          "sub": 0,
+          "offset": 32,
+          "width": 2,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11,
+            12
+          ]
+        },
+        {
+          "key": "tone",
+          "id": 5,
+          "sub": 1,
+          "offset": 34,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11,
+            12
+          ]
+        },
+        {
+          "key": "level",
+          "id": 5,
+          "sub": 2,
+          "offset": 35,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11,
+            12
+          ]
+        },
+        {
+          "key": "treble",
+          "id": 5,
+          "sub": 3,
+          "offset": 36,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11,
+            12
+          ]
+        },
+        {
+          "key": "middle",
+          "id": 5,
+          "sub": 4,
+          "offset": 37,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11,
+            12
+          ]
+        },
+        {
+          "key": "bass",
+          "id": 5,
+          "sub": 5,
+          "offset": 38,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            11,
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "key": "flanger",
+      "models": [
+        0
+      ],
+      "id": 6,
+      "base": 40,
+      "source_pages": [
+        12,
+        13
+      ],
+      "parameters": [
+        {
+          "key": "speed_hz",
+          "id": 6,
+          "sub": 0,
+          "offset": 40,
+          "width": 2,
+          "raw": [
+            100,
+            5000
+          ],
+          "display_divisor": 1000,
+          "source_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "key": "depth",
+          "id": 6,
+          "sub": 1,
+          "offset": 42,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "key": "manual",
+          "id": 6,
+          "sub": 2,
+          "offset": 43,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "key": "low_cut",
+          "id": 6,
+          "sub": 3,
+          "offset": 44,
+          "width": 1,
+          "raw": [
+            0,
+            1
+          ],
+          "display_divisor": 1,
+          "source_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "key": "high_cut",
+          "id": 6,
+          "sub": 4,
+          "offset": 45,
+          "width": 1,
+          "raw": [
+            0,
+            1
+          ],
+          "display_divisor": 1,
+          "source_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "key": "resonance",
+          "id": 6,
+          "sub": 5,
+          "offset": 46,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            12,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "key": "phaser",
+      "models": [
+        1,
+        2,
+        3
+      ],
+      "id": 6,
+      "base": 40,
+      "source_pages": [
+        13
+      ],
+      "parameters": [
+        {
+          "key": "speed_hz",
+          "id": 6,
+          "sub": 0,
+          "offset": 40,
+          "width": 2,
+          "raw": [
+            100,
+            10000
+          ],
+          "display_divisor": 1000,
+          "source_pages": [
+            13
+          ]
+        },
+        {
+          "key": "resonance",
+          "id": 6,
+          "sub": 1,
+          "offset": 42,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            13
+          ]
+        },
+        {
+          "key": "manual",
+          "id": 6,
+          "sub": 2,
+          "offset": 43,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            13
+          ]
+        },
+        {
+          "key": "depth",
+          "id": 6,
+          "sub": 3,
+          "offset": 44,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "key": "tremolo",
+      "models": [
+        4
+      ],
+      "id": 6,
+      "base": 40,
+      "source_pages": [
+        13,
+        14
+      ],
+      "parameters": [
+        {
+          "key": "speed_hz",
+          "id": 6,
+          "sub": 0,
+          "offset": 40,
+          "width": 2,
+          "raw": [
+            1650,
+            10000
+          ],
+          "display_divisor": 1000,
+          "source_pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "key": "depth",
+          "id": 6,
+          "sub": 1,
+          "offset": 42,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "key": "duty",
+          "id": 6,
+          "sub": 2,
+          "offset": 43,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "key": "shape",
+          "id": 6,
+          "sub": 3,
+          "offset": 44,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "key": "level",
+          "id": 6,
+          "sub": 4,
+          "offset": 45,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            13,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "key": "delay",
+      "models": [
+        5,
+        6
+      ],
+      "id": 6,
+      "base": 40,
+      "source_pages": [
+        14
+      ],
+      "parameters": [
+        {
+          "key": "time_ms",
+          "id": 6,
+          "sub": 0,
+          "offset": 40,
+          "width": 2,
+          "raw": [
+            30,
+            1200
+          ],
+          "display_divisor": 1,
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "key": "level",
+          "id": 6,
+          "sub": 1,
+          "offset": 42,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "key": "feedback",
+          "id": 6,
+          "sub": 2,
+          "offset": 43,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "key": "tone",
+          "id": 6,
+          "sub": 3,
+          "offset": 44,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "key": "mod_speed",
+          "id": 6,
+          "sub": 4,
+          "offset": 45,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14
+          ]
+        },
+        {
+          "key": "mod_depth",
+          "id": 6,
+          "sub": 5,
+          "offset": 46,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "key": "reverb",
+      "models": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": 8,
+      "base": 56,
+      "source_pages": [
+        14,
+        15
+      ],
+      "parameters": [
+        {
+          "key": "mix",
+          "id": 8,
+          "sub": 0,
+          "offset": 56,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "key": "time",
+          "id": 8,
+          "sub": 1,
+          "offset": 57,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "key": "pre_delay_ms",
+          "id": 8,
+          "sub": 2,
+          "offset": 58,
+          "width": 1,
+          "raw": [
+            0,
+            70
+          ],
+          "display_divisor": 1,
+          "source_pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "key": "low_damp",
+          "id": 8,
+          "sub": 3,
+          "offset": 59,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14,
+            15
+          ]
+        },
+        {
+          "key": "high_damp",
+          "id": 8,
+          "sub": 4,
+          "offset": 60,
+          "width": 1,
+          "raw": [
+            0,
+            100
+          ],
+          "display_divisor": 10,
+          "source_pages": [
+            14,
+            15
+          ]
+        }
+      ]
+    }
+  ],
+  "effect_models": {
+    "pedal1": [
+      "compressor",
+      "chorus",
+      "tube_od",
+      "gold_drive",
+      "treble_boost",
+      "rc_turbo",
+      "orange_dist",
+      "fat_dist",
+      "brit_lead",
+      "fuzz"
+    ],
+    "pedal2": [
+      "flanger",
+      "phaser_black",
+      "phaser_orange_1",
+      "phaser_orange_2",
+      "tremolo",
+      "tape_echo",
+      "analog_delay"
+    ],
+    "reverb": [
+      "room",
+      "spring",
+      "hall",
+      "plate"
+    ],
+    "source_pages": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "custom": {
+    "raw_bytes": 62,
+    "reserved_ranges": [
+      [
+        0,
+        15
+      ],
+      [
+        19,
+        23
+      ],
+      [
+        47,
+        54
+      ]
+    ],
+    "enable_byte": 17,
+    "enable_bits": {
+      "amp_and_noise": 0,
+      "pedal1": 1,
+      "pedal2": 2,
+      "reverb": 4
+    },
+    "inherits_program_ranges": [
+      [
+        16,
+        16
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        24,
+        46
+      ],
+      [
+        55,
+        61
+      ]
+    ],
+    "amp_model_allowed_by_index": [
+      [
+        0,
+        19
+      ],
+      [
+        0,
+        19
+      ],
+      [
+        0,
+        19
+      ],
+      null
+    ],
+    "pedal1_model_allowed_by_index": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        6,
+        9
+      ]
+    ],
+    "pedal2_model_allowed_by_index": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "reverb_model_allowed_by_index": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "source_pages": [
+      15,
+      16,
+      17
+    ]
+  },
+  "cautions": [
+    "Functional numeric transcription; not tested against hardware.",
+    "Display divisors are derived from the published raw/display endpoints; actual UI taper/step behavior needs app or hardware corroboration.",
+    "Multi-byte fields in raw dumps are little-endian base-256. Parameter-change wire values are two base-128 digits. Do not interchange these encodings.",
+    "Preserve reserved bytes and bytes not covered by the selected effect schema.",
+    "Reverb occupies six allocated bytes but only five fields are specified; preserve raw offset 61.",
+    "Custom dump text incorrectly references get-program 0x1c; earlier function table and request section specify 0x31.",
+    "ACK/NAK messages do not include a transaction ID or the parameter identity. Serialize mutations and investigate notifications separately.",
+    "No documented message checksum appears in the listed formats.",
+    "No official Tone Room disk-file schema was located."
+  ]
+}
