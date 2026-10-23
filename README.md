@@ -1,6 +1,6 @@
 # voxlink
 
-Implementation reference for an independent VOX Valvetronix X controller, initially targeting the VT20X.
+Implementation reference for an independent VOX Valvetronix X controller, initially targeting the **original VT20X (before Classic Blue)**.
 
 The amp exposes a **USB-MIDI System Exclusive (SysEx)** control protocol. It performs the audio processing; voxlink will manage sounds, parameters and presets. A future interface or MCP server can use the same device service.
 
@@ -9,6 +9,8 @@ The amp exposes a **USB-MIDI System Exclusive (SysEx)** control protocol. It per
 This repository contains documentation and machine-readable protocol tables only. No application, MIDI transport, MCP server or device-control implementation is included.
 
 The reference combines VOX's published MIDI specification with static analysis of Tone Room 1.4.0 and its bundled preset file. **No physical amplifier has been tested.** Packet formats have documentary and selected native-code corroboration; response timing, USB compatibility and successful writes remain unverified.
+
+The hardware target is the owner's original VT20X. The protocol baseline is VOX's 2015 VTX specification; Classic Blue compatibility is not established. The original model already provides 20 amp models and 60 programs through Tone Room, plus eight writable user slots. See [hardware scope and sources](docs/sources.md#hardware-scope).
 
 ## Implementation reading order
 

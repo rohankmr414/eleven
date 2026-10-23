@@ -23,7 +23,7 @@
 
 ## First hardware session: read-only
 
-Record OS, amp label, USB endpoint names/IDs, device identity bytes and firmware version fields. Use a known data-capable USB cable and establish a working host connection before testing wireless bridges.
+Record OS, amp label and hardware generation, USB endpoint names/IDs, device identity bytes and firmware version fields. The intended device is the owner's original VT20X, before Classic Blue; the family identity reply alone does not establish generation. Use a known data-capable USB cable and establish a working host connection before testing wireless bridges.
 
 1. Enumerate and open the selected MIDI input/output pair.
 2. Send universal identity inquiry; verify manufacturer/family and input/output pairing.

@@ -1,6 +1,12 @@
 # Sources and provenance
 
-Investigation date: 2026-10-23. Initial target: VOX VT20X, within the Valvetronix X family.
+Investigation date: 2026-10-23. Initial target: the owner's original VOX VT20X (before Classic Blue), within the Valvetronix X family.
+
+## Hardware scope
+
+The owner identified the device as the original VT20X. Our baseline is the 2015-07-31 VTX MIDI specification and supplied Tone Room 1.4.0 artifacts. The [original VT20X specifications](https://voxamps.com/en-gb/product/vt20x/) list USB mini Type-B, 11 panel/20 editor amp models, 33 panel/60 editor programs and eight user memories. The recovered app bank therefore does not depend on owning Classic Blue; matching its records to this particular amp's factory bank still requires live reads.
+
+VOX describes [VT20X Classic Blue](https://voxamps.com/product/vt20x-classic-blue/) as using VET+ modeling and an expanded role for the 12AX7 tube stage. Its page also lists Tone Room 1.4.0, but that alone does not prove identical firmware behavior, preset contents or sound. Classic Blue protocol compatibility is unverified and outside the initial hardware target. Do not infer hardware generation solely from the VTX family identity reply.
 
 ## Published sources
 
