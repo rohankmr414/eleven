@@ -1,16 +1,29 @@
 # Eleven
 
-Implementation reference for an independent VOX Valvetronix X controller, initially targeting the **original VT20X (before Classic Blue)**.
+Protocol reference and experimental test tools for an independent VOX Valvetronix X controller, initially targeting the **original VT20X (before Classic Blue)**.
 
 The amp exposes a **USB-MIDI System Exclusive (SysEx)** control protocol. It performs the audio processing; Eleven will manage sounds, parameters and presets. A future interface or MCP server can use the same device service.
 
 ## Current scope
 
-This repository contains documentation and machine-readable protocol tables only. No application, MIDI transport, MCP server or device-control implementation is included.
+This repository contains documentation, machine-readable protocol tables, a pure JavaScript codec and experimental macOS CoreMIDI probes. A complete controller application, Linux transport and MCP server are not implemented yet.
 
 The reference combines VOX's published MIDI specification, static analysis of Tone Room 1.4.0 and **successful read and temporary gain-change tests on the owner's original VT20X**. All 73 read requests succeeded on macOS; every factory record matched the recovered app bank byte-for-byte. A separate test changed gain 10.0 → 9.9 → 10.0, received both ACKs and verified complete sound restoration. Other parameter edits, persistent writes, control-change events, Linux/Pi and wireless operation remain unverified. See [hardware validation](docs/hardware-validation.md).
 
 The hardware target is the owner's original VT20X. The protocol baseline is VOX's 2015 VTX specification; Classic Blue compatibility is not established. The original model already provides 20 amp models and 60 programs through Tone Room, plus eight writable user slots. See [hardware scope and sources](docs/sources.md#hardware-scope).
+
+## Run the offline tests
+
+With Node.js 22+ and Python 3.9+ installed, run from the repository root. No npm or pip packages are required, and these commands do not open a MIDI device:
+
+```sh
+node --test scripts/*.test.mjs
+python3 -m unittest discover -s scripts -p 'test_*.py' -v
+```
+
+The suite covers the codec, all 68 reference presets, capture analysis, read-only transmit restrictions and temporary gain restoration. One in-memory CoreMIDI packet-layout test is skipped outside macOS; the rest use public preset data and synthetic replies.
+
+See [testing scripts and hardware instructions](scripts/README.md) to enumerate the amp, capture a read-only backup or explicitly run the reversible gain test. Captures and backups are written to the ignored `captures/` directory.
 
 ## Implementation reading order
 
@@ -25,6 +38,7 @@ The hardware target is the owner's original VT20X. The protocol baseline is VOX'
 | [Implementation boundaries](docs/implementation.md) | Transport, codec, session and API responsibilities |
 | [Verification plan](docs/verification.md) | Offline checks, first hardware experiments and unresolved questions |
 | [Hardware validation](docs/hardware-validation.md) | Actual VT20X read/edit results, transport observations and evidence limits |
+| [Testing scripts](scripts/README.md) | Offline checks, read-only captures, backup analysis and the temporary gain probe |
 | [Sources](docs/sources.md) and [native evidence](docs/native-evidence.md) | Provenance, artifact identities, addresses and confidence limits |
 
 Machine-readable references:
@@ -52,4 +66,4 @@ Auditioning a library program, selecting an existing hardware slot and saving to
 - **Proposed:** behavior recommended for the new application; not a firmware guarantee.
 - **Unverified:** requires device or additional file/runtime evidence.
 
-The experimental read path, user-bank backup and one reversible gain edit have been validated outside this documentation repository. Next are physical-control events, reconnect behavior and further current-buffer edits with readback. See the [verification plan](docs/verification.md).
+The included probes originate from the successful macOS read, user-bank backup and reversible gain experiments. Next are physical-control events, reconnect behavior and further current-buffer edits with readback. See the [verification plan](docs/verification.md).

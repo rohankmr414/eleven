@@ -2,7 +2,7 @@
 
 On 2026-10-23, the owner ran the experimental probe from macOS Terminal with Tone Room closed. **All 73 requests succeeded.** This establishes a working independent USB-MIDI read path to the owner's original VT20X and validates the recovered factory preset bank on this device.
 
-The probes and full captures remain outside this documentation-only repository. [hardware-read-validation.json](../reference/hardware-read-validation.json) contains the first session's scoped result, packet counts, timings and artifact hashes. A later [temporary gain test](#temporary-gain-change) also succeeded.
+The [probes and offline tests](../scripts/README.md) are included in this repository; full captures and personal amp backups remain local. [hardware-read-validation.json](../reference/hardware-read-validation.json) contains the first session's scoped result, packet counts, timings and artifact hashes. A later [temporary gain test](#temporary-gain-change) also succeeded. Source hashes in those historical reports identify the original scratch versions, before repository paths, client labels and explicit ctypes packing were updated for Eleven.
 
 ## Device and transport
 

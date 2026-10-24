@@ -1,6 +1,6 @@
 # Implementation boundaries
 
-Status: proposed design. This repository intentionally contains no runtime implementation yet.
+Status: proposed application design. The [experimental scripts](../scripts/README.md) provide a pure codec, macOS read-only transport and a narrowly scoped gain probe. A reusable device service, UI, Linux transport and MCP server remain to be implemented.
 
 ## Layers
 
@@ -37,9 +37,9 @@ These are candidates, not tested integrations. The Pi must act as a **USB host**
 
 ## Minimum first implementation
 
-1. Implement a pure codec from the [wire reference](wire-protocol.md), [parameter map](program-layout.md) and [synthetic vectors](../reference/test-vectors.json).
-2. Add one platform MIDI transport and read-only session: identity, mode, current program and user-slot reads.
-3. Preserve and export all eight user slots; record the actual firmware identity and transport behavior.
+1. Use and extend the [experimental codec](../scripts/vtx.mjs), checked against the [wire reference](wire-protocol.md), [parameter map](program-layout.md) and [synthetic vectors](../reference/test-vectors.json).
+2. Turn the macOS read probe into a reusable transport/session with explicit lifecycle handling; add a Linux transport separately.
+3. Preserve the existing eight-slot backup behavior and firmware/transport diagnostics in that service.
 4. Add physical-control event handling and readback synchronization.
 5. Add temporary parameter/full-program edits after the read path is verified.
 6. Add explicit slot saves, custom-default writes and restore flows with readback.
