@@ -105,7 +105,7 @@ Indices below are zero-based app-table positions. Names reproduce the stored 16-
 2. To audition an extracted record, validate it and send it as a `40` current-buffer dump. This previews a sound without intentionally overwriting a user slot.
 3. To select an existing amp factory sound, use mode `01` / program index through `4E`, then read mode/current state. This is a different action from uploading the extracted record.
 4. To keep an edited sound, explicitly save it to one of the eight user slots.
-5. A factory-bank export would contain 60 records. This does not establish that Tone Room accepts a 60-record `.vtxprog` container; use a documented voxlink archival format until that compatibility is tested.
+5. A factory-bank export would contain 60 records. This does not establish that Tone Room accepts a 60-record `.vtxprog` container; use a documented Eleven archival format until that compatibility is tested.
 
 ## Static proof and recovery boundary
 

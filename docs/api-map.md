@@ -1,6 +1,6 @@
 # Application API map
 
-All API names in this document are **proposed voxlink interfaces**, not recovered Tone Room exports or existing implementations. The wire operations are specified by VOX; their exact bytes are in [wire-protocol.md](wire-protocol.md).
+All API names in this document are **proposed Eleven interfaces**, not recovered Tone Room exports or existing implementations. The wire operations are specified by VOX; their exact bytes are in [wire-protocol.md](wire-protocol.md).
 
 Arguments use zero-based numeric indices. A `Program` contains the complete 62-byte raw record plus decoded fields; decoded fields alone are insufficient for a lossless backup. A returned result should distinguish requested changes, acknowledged changes and readback-verified changes.
 

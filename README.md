@@ -1,8 +1,8 @@
-# voxlink
+# Eleven
 
 Implementation reference for an independent VOX Valvetronix X controller, initially targeting the **original VT20X (before Classic Blue)**.
 
-The amp exposes a **USB-MIDI System Exclusive (SysEx)** control protocol. It performs the audio processing; voxlink will manage sounds, parameters and presets. A future interface or MCP server can use the same device service.
+The amp exposes a **USB-MIDI System Exclusive (SysEx)** control protocol. It performs the audio processing; Eleven will manage sounds, parameters and presets. A future interface or MCP server can use the same device service.
 
 ## Current scope
 
